@@ -3,8 +3,8 @@ module.exports = {
   content: ["./templates/**/*.twig"],
   theme: {
     colors: {
-      'primary': '#084457',
-      'secondary': '#5A7B87',
+      'primary': '#0E7591',
+      'secondary': '#CCFDC4',
       'tertiary': '#D2E9E8',
       'quarternary' : '#0673EF',
       'black': '#000',
@@ -49,7 +49,9 @@ module.exports = {
     md: ['21px', '26px'],
     lg: ['24px', '26px'],
     xl: ['32px', '35px'],
+    xxl: ['34px', '40px'],
     '2xl': ['64px', '70px'],
+    '3xl': ['128px', '140px']
   },
     extend: {},
   },

@@ -1,4 +1,4 @@
-<div class="h__small_hero {% if breadcrumb %}relative{% endif %}" {% if hero.background_colour %}style="background-color: #{{ hero.background_colour }}"{% endif %}>
+<div class="h__small_hero {% if breadcrumb %}relative{% endif %}" style="{% if hero.make_gradient %}background:{{ hero.gradient_style ? hero.gradient_style }}-gradient({% if hero.gradient_style == 'radial' %}circle{% else %}{% if hero.gradient_angle == "top-bottom" %}0deg{% else %}90deg{% endif %}{% endif %}, #{{ hero.background_colour }} 0%, #{{ hero.gradient_colour }} 100%);{% else %}background-color: #{{ hero.background_colour }}{% endif %}">
     <div class="container mx-auto px-4 h-full">
         {% if breadcrumb %}
             <div class="c__hero__breadcrumb absolute">

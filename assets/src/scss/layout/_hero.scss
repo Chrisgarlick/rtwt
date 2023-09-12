@@ -5,8 +5,30 @@
     @apply bg-center;
     @apply bg-no-repeat;
 
-    .__wrap {
+    &__wrap {
 
+     &--title {
+
+        h1 {
+
+            @apply text-3xl;
+            @apply uppercase;
+
+        }
+
+     }   
+
+     &--subheader {
+
+        p {
+
+            @apply text-xxl;
+            @apply w-3/4;
+            @apply mx-auto;
+
+        }
+
+     }
 
 
     }
