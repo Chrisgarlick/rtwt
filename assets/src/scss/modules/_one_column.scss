@@ -1,0 +1,27 @@
+.m__one_column {
+
+    &__wrapper {
+
+        &.text-mid {
+            @apply text-center;
+        }
+
+        &.text-beg {
+            @apply text-start;
+        }
+
+        &.text-far {
+            @apply text-end;
+        }
+
+        &--title {
+
+            &-header {
+
+            }
+
+        }
+
+    }
+
+}

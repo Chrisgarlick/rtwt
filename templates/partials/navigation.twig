@@ -1,0 +1,69 @@
+{% if nav %}
+	<nav id="nav-main" class="m__nav w-full hidden md:block">
+		<ul class="m__nav__wrap flex justify-evenly">
+			{% for item in nav %} 
+				{% if item.menu_item_parent == 0 %}
+					<li class="m__nav__item {{ item.classes|join(' ') }} {{ item.url == current_url ? 'current' }} ">
+
+						{% if item.child %}
+							<div class="m__nav__item-sub">
+								<a href="{{ item.url }}" class="m__nav__item-link font-medium" target="{{ item.target == '_blank' ? item.target : '_self' }}">{{ item.name }}</a>
+								<label for="menu-checkbox-{{ item.object_id }}" class="menu-checkbox-toggle">{{__('Next', 'cd-theme') }}</label>
+							</div>
+							<input type="checkbox" id="menu-checkbox-{{ item.object_id }}" name="menu-checkbox-{{ item.object_id }}" class="menu-checkbox">
+							<div class="subnav">
+								<label for="menu-checkbox-{{ item.object_id }}" class="subnav__back">{{ __('Back', 'cd-theme') }}</label>
+
+								<div class="l__contain l__flexheight">
+									{% if item.attr_title|length  %}
+										<div class="subnav__info">
+											{{ item.attr_title ? '<h2>' ~ item.attr_title ~ '</h2>' }}
+											{{ item.description|wpautop }}
+										</div>
+									{% endif %}
+
+									<ul class="subnav__terms nolist">
+										{% for subitem in nav %} 
+											{% if subitem.menu_item_parent == item.id %}
+												<li class="m__nav__item {{ subitem.classes|join(' ') }}">
+													{% if subitem.child %}
+														<div class="m__nav__item--sub">
+															<a class="font-medium" href="{{ subitem.url }}" title="{{ subitem.name }}">{{ subitem.name }}</a>
+															<label for="menu-checkbox-{{ subitem.object_id }}" class="menu-checkbox-toggle">{{__('Next', 'cd-theme') }}</label>
+														</div>
+														<input type="checkbox" id="menu-checkbox-{{ subitem.object_id }}" name="menu-checkbox-{{ subitem.object_id }}" class="menu-checkbox">
+														<ul class="subnav__children nolist">
+															<label for="menu-checkbox-{{ subitem.object_id }}" class="subnav__back">{{ __('Back', 'cd-theme') }}</label>
+															{% for childitem in nav %} 
+																{% if childitem.menu_item_parent == subitem.id %}
+																	<li><a class="font-medium" href="{{ childitem.url }}" title="{{ childitem.name }}">{{ childitem.name }}</a></li>
+																{% endif %}
+															{% endfor %}
+														</ul>	
+													{% else %}
+														<a class="font-medium" href="{{ subitem.url }}" title="{{ subitem.name }}">{{ subitem.name }}</a>
+													{% endif %}
+												</li>
+											{% endif %}
+										{% endfor %}
+									</ul>
+
+								</div>
+							</div> 
+						{% else %}
+							<a class="font-medium" href="{{ item.url }}" class="m__nav__item-link" {{ item.target == '_blank' ? item.target : '_self' }}>{{ item.name }}</a>
+						{% endif %}
+					</li>
+				{% endif %} 
+
+			{% endfor %}
+		</ul>
+
+	
+	</nav>
+	<div class="hamburger block md:hidden absolute right-[10%] text-white">
+		<span class="line top"></span>
+		<span class="line middle"></span>
+		<span class="line bottom"></span>
+	</div>
+{% endif %}

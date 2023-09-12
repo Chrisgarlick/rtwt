@@ -1,0 +1,42 @@
+footer {
+
+    @apply bg-black;
+    @apply h-[650px];
+    @apply md:h-[300px];
+
+    .g__footer__block {
+
+        &__wrap {
+
+            &--contact {
+
+                a {
+
+                    color: white;
+                    @apply my-4;
+
+                }
+
+                h4 {
+
+                    color: white;
+
+                }
+
+            }
+
+            &--menuOne, &--menuTwo {
+
+                h4, p, a {
+
+                    color: white;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

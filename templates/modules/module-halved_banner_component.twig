@@ -1,0 +1,155 @@
+{% set left_media = content.left_side.media_type %}
+{% set right_media = content.right_side.media_type %}
+
+<div class="m__halved_banner {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    {% if not content.full_width %}
+        <div class="container mx-auto px-4">
+    {% endif %}
+        <div class="m__halved_banner__wrap {% if content.full_width %}full_width{% endif %} {% if content.background %}squares{% endif %} w-full flex flex-col md:flex-row justify-between">
+            <div class="m__halved_banner__wrap__left w-full md:w-1/2 " {% if content.background_colour %}style="background-color: #{{ content.background_colour }}"{% endif %}>
+                {% if left_media == 'copy' %}
+                    <div class="m__halved_banner__wrap__left__{{ left_media }}">
+                        {% if content.left_side.copy_title %}
+                            <div class="m__halved_banner__wrap__left__{{ left_media }}--header flex-1">
+                                <h4>{{ content.left_side.copy_title }}</h4>
+                            </div>
+                        {% endif %}
+                        {% if content.left_side.copy_content %}
+                            <div class="m__halved_banner__wrap__left__{{ left_media }}--content flex-1">
+                                <p>{{ content.left_side.copy_content }}</p>
+                            </div>
+                        {% endif %}
+                        {% if content.left_side.copy_cta.url %}
+                            <div class="m__halved_banner__wrap__left__{{ left_media }}--link flex-1">
+                                <a class="mr-2 cta cta--{{ content.left_side.cta_style }}" href="{{ content.left_side.copy_cta.url }}" target="{{ content.left_side.copy_cta.link.target ? content.left_side.copy_cta.link.target : '_self' }}">{{ content.left_side.copy_cta.title }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% elseif left_media == 'image' %}
+                    <div class="m__halved_banner__wrap__left__{{ left_media }}">
+                        {% if content.left_side.image_title %}
+                            <div class="m__halved_banner__wrap__left__{{ left_media }}--header flex-1">
+                                <h4>{{ content.left_side.image_title }}</h4>
+                            </div>
+                        {% endif %}
+                        {% if content.left_side.image_img.url %}
+                            <div class="m__halved_banner__wrap__left__{{ left_media }}--image flex-1">
+                                <img src="{{ content.left_side.image_img.url }}" alt="{{ content.left_side.image_img.alt }}">
+                            </div>
+                        {% endif %}
+                    </div>
+                {% elseif left_media == 'file' %}
+                    <div class="m__halved_banner__wrap__left__{{ left_media }}">
+                        {% if content.left_side.file_title %}
+                            <div class="m__halved_banner__wrap__left__{{ left_media }}--header flex-1">
+                                <h4>{{ content.left_side.file_title }}</h4>
+                            </div>
+                        {% endif %}
+                        {% if content.left_side.file_content %}
+                            <div class="m__halved_banner__wrap__left__{{ left_media }}--content flex-1">
+                                {{ content.left_side.file_content }}
+                            </div>
+                        {% endif %}
+                        {% if content.left_side.file_link %}
+                            <div class="m__halved_banner__wrap__left__{{ left_media }}--download flex-1">
+                                    <a class="mr-2 cta cta--{{ content.left_side.cta_style }}" href="{{ content.left_side.file_link.url }}" target="_blank">{{ content.left_side.file_download_title }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% elseif left_media == 'links' %}
+                    <div class="m__halved_banner__wrap__left__{{ left_media }}">
+                        <div class="m__halved_banner__wrap__left__{{ left_media }}--header">
+                            <h4>Additional Links</h4>
+                        </div>
+                        {% if content.left_side.link_one.url or content.left_side.link_two.url or content.left_side.link_three.url %}
+                            <div class="m__halved_banner__wrap__left__{{ left_media }}--links flex flex-col">
+                                {% if content.left_side.link_one.url %}
+                                    <a class="mr-2 cta cta--{{ content.left_side.cta_style }}" href="{{ content.left_side.link_one.url }}" target="{{ content.left_side.link_one.link.target ? content.left_side.link_one.link.target : '_self' }}">{{ content.left_side.link_one.title }}</a>
+                                {% endif %}
+                                {% if content.left_side.link_two.url %}
+                                    <a class="mr-2 cta cta--{{ content.left_side.cta_style }}" href="{{ content.left_side.link_two.url }}" target="{{ content.left_side.link_two.link.target ? content.left_side.link_two.link.target : '_self' }}">{{ content.left_side.link_two.title }}</a>
+                                {% endif %}
+                                {% if content.left_side.link_three.url %}
+                                    <a class="mr-2 cta cta--{{ content.left_side.cta_style }}" href="{{ content.left_side.link_three.url }}" target="{{ content.left_side.link_three.link.target ? content.left_side.link_three.link.target : '_self' }}">{{ content.left_side.link_three.title }}</a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="m__halved_banner__wrap__right w-full md:w-1/2" {% if content.background_colour %}style="background-color: #{{ content.background_colour }}"{% endif %}>
+                {% if right_media == 'copy' %}
+                    <div class="m__halved_banner__wrap__right__{{ right_media }}">
+                        {% if content.right_side.copy_title %}
+                            <div class="m__halved_banner__wrap__right__{{ right_media }}--header flex-1">
+                                <h4>{{ content.right_side.copy_title }}</h4>
+                            </div>
+                        {% endif %}
+                        {% if content.right_side.copy_content %}
+                            <div class="m__halved_banner__wrap__right__{{ right_media }}--content flex-1">
+                                <p>{{ content.right_side.copy_content }}</p>
+                            </div>
+                        {% endif %}
+                        {% if content.right_side.copy_cta.url %}
+                            <div class="m__halved_banner__wrap__right__{{ right_media }}--link flex-1">
+                                <a class="mr-2 cta cta--{{ content.right_side.cta_style }}" href="{{ content.right_side.copy_cta.url }}" target="{{ content.right_side.copy_cta.link.target ? content.right_side.copy_cta.link.target : '_self' }}">{{ content.right_side.copy_cta.title }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% elseif right_media == 'image' %}
+                    <div class="m__halved_banner__wrap__left__{{ right_media }}">
+                        {% if content.right_side.image_title %}
+                            <div class="m__halved_banner__wrap__right__{{ right_media }}--header flex-1">
+                                <h4>{{ content.left_side.image_title }}</h4>
+                            </div>
+                        {% endif %}
+                        {% if content.right_side.image_img.url %}
+                            <div class="m__halved_banner__wrap__right__{{ right_media }}--image flex-1">
+                                <img src="{{ content.right_side.image_img.url }}" alt="{{ content.right_side.image_img.alt }}">
+                            </div>
+                        {% endif %}
+                    </div>
+                {% elseif right_media == 'file' %}
+                    <div class="m__halved_banner__wrap__left__{{ right_media }}">
+                        {% if content.right_side.file_title %}
+                            <div class="m__halved_banner__wrap__right__{{ right_media }}--header flex-1">
+                                <h4>{{ content.right_side.file_title }}</h4>
+                            </div>
+                        {% endif %}
+                        {% if content.right_side.file_content %}
+                            <div class="m__halved_banner__wrap__right__{{ right_media }}--content flex-1">
+                                {{ content.right_side.file_content }}
+                            </div>
+                        {% endif %}
+                        {% if content.right_side.file_link %}
+                            <div class="m__halved_banner__wrap__right__{{ right_media }}--download flex-1">
+                                    <a class="mr-2 cta cta--{{ content.right_side.cta_style }}" href="{{ content.right_side.file_link.url }}" target="_blank">{{ content.right_side.file_download_title }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% elseif right_media == 'links' %}
+                    <div class="m__halved_banner__wrap__left__{{ right_media }}">
+                        <div class="m__halved_banner__wrap__right__{{ right_media }}--header">
+                            <h4>Additional Links</h4>
+                        </div>
+                        {% if content.right_side.link_one.url or content.right_side.link_two.url or content.right_side.link_three.url %}
+                            <div class="m__halved_banner__wrap__right__{{ right_media }}--links flex flex-col">
+                                {% if content.right_side.link_one.url %}
+                                    <a class="mr-2 cta cta--{{ content.right_side.cta_style }}" href="{{ content.right_side.link_one.url }}" target="{{ content.right_side.link_one.link.target ? content.right_side.link_one.link.target : '_self' }}">{{ content.right_side.link_one.title }}</a>
+                                {% endif %}
+                                {% if content.right_side.link_two.url %}
+                                    <a class="mr-2 cta cta--{{ content.right_side.cta_style }}" href="{{ content.right_side.link_two.url }}" target="{{ content.right_side.link_two.link.target ? content.right_side.link_two.link.target : '_self' }}">{{ content.right_side.link_two.title }}</a>
+                                {% endif %}
+                                {% if content.right_side.link_three.url %}
+                                    <a class="mr-2 cta cta--{{ content.right_side.cta_style }}" href="{{ content.right_side.link_three.url }}" target="{{ content.right_side.link_three.link.target ? content.right_side.link_three.link.target : '_self' }}">{{ content.right_side.link_three.title }}</a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% if not module.full_width %}
+        </div>
+    {% endif %}
+</div>

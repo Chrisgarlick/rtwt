@@ -1,0 +1,155 @@
+.m__accordion {
+
+    &__wrap {
+
+        &__individual {
+
+            &--header {
+
+                border-bottom: 3px solid black;
+                @apply relative;
+                @apply cursor-pointer;
+                @apply pb-4;
+                @apply mb-8;
+                transition: 0.5s ease-in-out transform;
+                
+                &::after {
+    
+                    content: '+';
+                    font-size: 48px;
+                    color: black;
+                    @apply absolute;
+                    right: 0;
+                    top: 0;
+                    transition: 0.3s ease-in-out transform;
+
+                }
+
+                &.active {
+
+                    @apply mb-0;
+
+                    &::after {
+
+                        transform: rotate(45deg);
+
+                    }
+
+                }
+                
+                &:hover {
+
+                    border-bottom: 3px solid blue;
+                    
+                    h2 {
+                        
+                        color: blue;
+
+                    }
+
+                    &::after {
+                        color: blue;
+                    }
+
+                }
+            }
+
+
+            &--content {
+
+                max-height: 0;
+                transition: 0.5s ease-in-out all;
+                overflow: hidden;
+                padding-bottom: 0;
+                opacity: 0;
+                
+
+                &.active {
+                    
+                    transition: 0.5s ease-in-out all;
+                    max-height: fit-content;
+                    @apply mb-8;
+                    opacity: 1;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &__faq {
+
+        &--item {
+
+            &__heading {
+
+                border-bottom: 3px solid black;
+                @apply relative;
+                @apply cursor-pointer;
+                @apply pb-4;
+                @apply mb-8;
+                transition: 0.5s ease-in-out transform;
+                
+                &::after {
+    
+                    content: '+';
+                    font-size: 48px;
+                    color: black;
+                    @apply absolute;
+                    right: 0;
+                    top: 0;
+                    transition: 0.3s ease-in-out transform;
+
+                }
+
+                &.active {
+
+                    @apply mb-0;
+
+                    &::after {
+
+                        transform: rotate(45deg);
+
+                    }
+
+                }
+                
+                &:hover {
+
+                    border-bottom: 3px solid blue;                     
+                    color: blue;
+
+                    &::after {
+                        color: blue;
+                    }
+
+                }
+            }
+
+            &__body {
+
+                max-height: 0;
+                transition: 0.5s ease-in-out all;
+                overflow: hidden;
+                padding-bottom: 0;
+                opacity: 0;
+                
+
+                &.active {
+                    
+                    transition: 0.5s ease-in-out all;
+                    max-height: fit-content;
+                    @apply mb-8;
+                    opacity: 1;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,30 @@
+
+<div id="myCarousel" class="m__full_width_carousel {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+            <h3>{{ content.section_title }}</h3>
+        <div class="m__full_width_carousel__wrap">
+            {% if content.media_type == 'image' %}
+                <div class="m__full_width_carousel__wrap__image">
+                    {% for image in content.image_repeater %}
+                        <img class="m__full_width_carousel__wrap__image--holder" src="{{ image.entry.url }}" data-loop="{{ loop.index }}">
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="m__full_width_carousel__wrap__video">
+                    {% for video in content.video_links %}
+                        <div class="m__full_width_carousel__wrap__video--holder">
+                                <a class="m__full_width_carousel__wrap__video--play-btn" href="{{ video.video }}" target="_blank">
+                                    {% if video.placeholder_image %}<img src='{{ video.placeholder_image.url }}'>{% endif %}
+                                    <span class="sr-only">{{ __('Play', 'cg_base') }}</span>
+                                </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="m__full_width_carousel__buttons w-full flex flex-row justify-between">
+                <button class="prev-btn cta cta--primary">Previous</button>
+                <button class="next-btn cta cta--primary">Next</button>
+            </div> 
+        </div>
+    </div>
+</div>

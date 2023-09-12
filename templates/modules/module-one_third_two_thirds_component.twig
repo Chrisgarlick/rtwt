@@ -1,0 +1,20 @@
+<div class="m__one_third_two_third {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+        <div class="m__one_third_two_third_wrapper {{ content.left_side_type }}">
+            <div class="m__one_third_two_third_wrapper__left">
+                {% if content.left_side_type == 'image' %}
+                    <div class="m__one_third_two_third_wrapper__left--image">
+                        <img src="{{ content.image.url }}">
+                    </div>
+                {% else %}
+                    <div class="m__one_third_two_third_wrapper__left--text">
+                        <h3>{{ content.title }}</h3>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="m__one_third_two_third_wrapper__right">
+                {{ content.copy }}
+            </div>
+        </div>
+    </div>
+</div>

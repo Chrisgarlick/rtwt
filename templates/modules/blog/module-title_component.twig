@@ -1,0 +1,12 @@
+<div class="n__blog {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+        <div class="n__blog__title">
+            <h1 class="text-center">{{ content.title }}</h1>
+        </div>
+        {% if content.show_featured_image %}
+            <div class="n__blog--featuredimg my-8">
+                <img class="w-1/2 mx-auto" src="{{ hero.image.url }}">
+            </div>
+        {% endif %}
+    </div>
+</div>

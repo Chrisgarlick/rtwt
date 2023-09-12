@@ -1,0 +1,26 @@
+.m__image_blocks {
+
+    &__wrapper {
+
+        &--title {
+
+
+
+        }
+
+        &__content {
+
+            &--individual {
+
+                a {
+                    @apply text-sm;
+                    @apply underline;
+                }
+
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,77 @@
+{
+    "key": "group_64cd064bf2b4e",
+    "title": "Flexible - Case Study",
+    "fields": [
+        {
+            "key": "field_64cd064cb95d9",
+            "label": "Flexible Case Study",
+            "name": "flexible_case_study",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_64cd0650374f5": {
+                    "key": "layout_64cd0650374f5",
+                    "name": "case_study_component",
+                    "label": "Case Study Component",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64cd067fb95da",
+                            "label": "Case Study Component Clone",
+                            "name": "case_study_component_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_64cd069206b4e"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Row"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "case-study"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1691158242
+}

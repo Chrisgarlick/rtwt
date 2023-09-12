@@ -1,0 +1,28 @@
+<div class="m__fiftyfifty {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+        {% for section in content.fiftyfifty_block %}
+            <div class="m__fiftyfifty_block flex flex-col {% if section.content_side == 'left' %}md:flex-row {% else %}md:flex-row-reverse{% endif %} w-full {{ section.padding ? section.top_padding ~ ' ' ~  section.bottom_padding }}">
+                <div class="m__fiftyfifty_block--text w-full md:w-1/2">
+                    <h2 class="m__fiftyfifty_block--text-header">{{ section.title }}</h2>
+                    {{ section.copy }}
+                    {% if section.first_cta.url or section.second_cta.url %}
+                        <div class="m__fiftyfifty_block--text-links flex justify-start items-center my-4">
+                        {% if section.first_cta.url %}
+                            <a class="mr-2 cta cta--{{ section.cta_style ? section.cta_style }}" href="{{ section.first_cta.url }}" target="{{ section.first_cta.link.target ? section.first_cta.link.target : '_self' }}">{{ section.first_cta.title }}</a>
+                        {% endif %}
+                        {% if section.second_cta.url %}
+                            <a class="ml-2 cta cta--{{ section.cta_style ? section.cta_style }}" href="{{ section.second_cta.url }}" target="{{ section.second_cta.link.target ? section.second_cta.link.target : '_self' }}">{{ section.second_cta.title }}</a>
+                        {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="m__fiftyfifty_block--image flex flex-col items-center justify-center w-full md:w-1/2">
+                    <img src="{{ section.image.url }}" alt="{{ section.image.alt }}">
+                    {% if section.caption %} 
+                        <p class="caption">{{ section.image.alt }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

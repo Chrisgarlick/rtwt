@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    {% include 'partials/flexible-hero.twig' %} 
+
+    <div class="c__listings c__block cf mt-12">
+        <div class="container mx-auto px-4">
+            <div class="l__contain">
+                <div class="l__row">
+                    {% if groups|length > 0 %}
+                        {% for group in groups %} 
+                            <div class="m__accordion__term mt-4 mb-12"><h2>{{ group.name }}</h2></div>
+                            <div class="m__accordion__faq l__row c__block" data-term="{{ group.term_id }}" data-anim="fadeslideup" data-anim__delay="{{ loop.index }}" data-anim__scroll="true" data-anim__animate="animate">
+                                {% for a in group.posts %}
+                                    <div class="m__accordion__faq--item">
+                                        <h4 class="m__accordion__faq--item__heading">{{ a.title }}</h4>
+                                        <div class="m__accordion__faq--item__body w-3/4 mx-auto">
+                                            {{ a.content|wpautop }}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %} 
+                            
+                    {% else %}
+                        <h2>{{ not_found }}</h2>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'partials/flexible-content.twig' %}
+{% endblock %}

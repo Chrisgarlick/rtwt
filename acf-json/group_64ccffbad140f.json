@@ -1,0 +1,77 @@
+{
+    "key": "group_64ccffbad140f",
+    "title": "Flexible - Resources",
+    "fields": [
+        {
+            "key": "field_64ccffba0e835",
+            "label": "Flexible Resources",
+            "name": "flexible_resources",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_64ccffc0ed3d1": {
+                    "key": "layout_64ccffc0ed3d1",
+                    "name": "resources_component",
+                    "label": "Resources Component",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64ccffd60e836",
+                            "label": "Resources Component Clone",
+                            "name": "resources_component_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_64ccfdc65361c"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Row"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resources"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1691156483
+}

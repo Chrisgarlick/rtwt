@@ -1,0 +1,42 @@
+{% if menu.footer_nav or menu.legal_nav %}
+    <footer class="g__footer__block block">
+        <div class="container mx-auto px-4">
+            <div class="g__footer__block__wrap flex flex-col md:flex-row items-start justify-between pt-12">
+                {% if global.global_logo.url %}
+                    <div class="g__footer__block__wrap__logo flex items-center h-full my-auto">
+                        <a href="{{ site.link }}" aria-label="{{ site.name }} logo">
+                            <img src="{{ global.global_logo.url }}" alt="{{ site.name }}" width="150" height="30">
+                        </a>
+                    </div>
+                {% endif %}
+                <div class="g__footer__block__wrap--contact">
+                    <h4 class="mb-4">Get In Touch</h4>
+                    <div class="g__footer__block__wrap--contact-details flex flex-col">
+                        <a href="tel:#">0191 428 2423</a>
+                        <a href="mailto:#">cgarlick94@gmail.com</a>
+                    </div>
+                </div>
+                <div class="g__footer__block__wrap--menuOne">
+                    <h4 class="mb-4">Quick Links</h4>
+                    <div class="g__footer__block__wrap--menuOne-content">
+                        <ul class="list-none">
+                            {% for fitem in menu.footer_nav %}
+                                <li><a href="{{ fitem.url }}" class="{{ item.object_id == pageid ? 'current' }}" target="{{ fitem.target ? fitem.target : '_self' }}" {{ fitem.target == '_blank' ? 'rel="noopener"' }}>{{ fitem.name }}</a></li>
+                            {% endfor %}
+                        </ul> 
+                    </div>
+                </div>
+                <div class="g__footer__block__wrap--menuTwo">
+                    <h4 class="mb-4">Legal Links</h4>
+                    <div class="g__footer__block__wrap--menuOne-content">
+                        <ul class="list-none">
+                            {% for fitem in menu.legal_nav %}
+                                <li><a href="{{ fitem.url }}" class="{{ item.object_id == pageid ? 'current' }}" target="{{ fitem.target ? fitem.target : '_self' }}" {{ fitem.target == '_blank' ? 'rel="noopener"' }}>{{ fitem.name }}</a></li>
+                            {% endfor %}
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </footer>
+{% endif %}

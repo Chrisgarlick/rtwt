@@ -1,0 +1,45 @@
+.m__tabs {
+
+    &__wrapper {
+
+        &__headers {
+
+            &--title {
+
+                h3 {
+
+                    &.active {
+
+                        @apply underline;
+                        @apply decoration-2;
+                        @apply decoration-red;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        &__content {
+
+            &__js {
+
+                @apply hidden;
+
+                &.active {
+
+                    @apply flex;
+                    @apply flex-col;
+                        
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

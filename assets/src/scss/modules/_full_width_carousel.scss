@@ -1,0 +1,118 @@
+.m__full_width_carousel__wrap__image, .m__full_width_carousel__wrap__video {
+    max-height: 720px;
+    max-width: 1280px;
+    height: 720px;
+    width: 1280px;
+}
+.m__full_width_carousel h3 {
+    @apply text-center;
+    @apply my-4;
+}
+
+.m__full_width_carousel__wrap__image--holder, .m__full_width_carousel__wrap__video--holder {
+    @apply bg-cover;
+    @apply bg-center;
+    @apply bg-no-repeat;
+    @apply h-full;
+    @apply w-full;
+    @apply hidden;
+}
+.m__full_width_carousel__wrap__image--holder.active {
+    @apply block;
+
+}
+.m__full_width_carousel__wrap__video {
+    @apply relative;
+}
+.m__full_width_carousel__wrap__video--holder {
+    @apply relative;
+}
+.m__full_width_carousel__wrap__video--play-btn::before {
+    content: '';
+    background-image: url('../../images/play_button.svg');
+    width: 50px;
+    height: 50px;
+    @apply absolute;
+    top: 50%;
+    left: 50%;
+}
+.m__full_width_carousel__buttons {
+    @apply mt-4;
+}
+.m__full_width_carousel .slick-dots {
+    @apply flex;
+    @apply flex-row;
+    @apply w-1/4;
+    @apply justify-evenly;
+    @apply items-center;
+    @apply mx-auto
+}
+.m__full_width_carousel .slick-dots li {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 50%;
+    @apply cursor-pointer;
+}
+.m__full_width_carousel .slick-dots li:hover {
+    background-color: black;
+    opacity: 0.5;
+}
+.m__full_width_carousel .slick-dots li.slick-active {
+    background-color: black;
+}
+.m__full_width_carousel__wrap__image, .m__full_width_carousel__wrap__video {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+// @media only screen and (max-width: 1279px) {
+//     .m__full_width_carousel__wrap__image, .m__full_width_carousel__wrap__video {
+//         max-height: 567px;
+//         max-width: 1008px;
+//         height: 567px;
+//         width: 1008px;
+//     }
+// }
+// @media only screen and (max-width: 1023px) {
+//     .m__full_width_carousel__wrap__image, .m__full_width_carousel__wrap__video {
+//         max-height: 423px;
+//         max-width: 752px;
+//         height: 423px;
+//         width: 752px;
+//     }
+// }
+// @media only screen and (max-width: 767px) {
+//     .m__full_width_carousel__wrap__image, .m__full_width_carousel__wrap__video {
+//         max-height: 342px;
+//         max-width: 608px;
+//         height: 342px;
+//         width: 608px;
+//     }
+// }
+// @media only screen and (max-width: 620px) {
+//     .m__full_width_carousel__wrap__image, .m__full_width_carousel__wrap__video {
+//         max-height: 279px;
+//         max-width: 496px;
+//         height: 279px;
+//         width: 496px;
+//     }
+// }
+@media only screen and (max-width: 767px) {
+    .m__full_width_carousel__buttons {
+        @apply mt-0;
+    }
+    .m__full_width_carousel .slick-dots li {
+        width: 20px;
+        height: 20px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .m__full_width_carousel .slick-dots li {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+// 500px <

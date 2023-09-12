@@ -1,0 +1,236 @@
+.m__halved_banner {
+
+    &__wrap {
+
+        @apply gap-2;
+        @apply md:gap-4;
+        @apply lg:gap-32;
+
+        &.squares {
+
+            
+            .m__halved_banner__wrap__left, .m__halved_banner__wrap__right {
+                color: black;
+
+            }
+            .m__halved_banner__wrap__left, .m__halved_banner__wrap__right {
+                border-radius: 25px;
+            }
+
+
+        }
+
+
+
+        &__left {
+
+
+            
+            &__copy, &__image, &__file, &__links {
+                
+                max-height: 400px;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                @apply p-8;
+                @apply md:p-12; 
+                height: 100%;
+                
+            }
+
+            &__image {
+                
+                text-align: center;
+
+                &--image {
+
+                    @apply p-8;
+                    @apply md:p-8;
+
+                }
+
+            }
+
+            &__file {
+
+                text-align: center;
+    
+                &--header {
+                    @apply py-2;
+                }
+                &--content {
+                    @apply py-2;
+                }
+                &--download {
+                    @apply py-2;
+                }
+    
+
+            }
+
+            &__links {
+
+                @apply w-3/4;
+                @apply mx-auto;
+
+                &--header {
+
+                    @apply text-center;
+
+                }
+
+                &--links {
+
+                    @apply flex;
+                    @apply justify-center;
+                    @apply items-center;
+                    @apply flex-col;
+
+                    a {
+
+                        @apply my-4;
+
+                    }
+
+
+                }
+
+            }
+            
+        }
+        
+        &__right {
+            
+            &__copy, &__image, &__file, &__links {
+
+                max-height: 400px;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                @apply p-8;
+                @apply md:p-12;
+                height: 100%;
+            }
+
+            &__image {
+                
+                text-align: center;
+
+                &--image {
+
+                    @apply p-8;
+                    @apply md:p-8;
+
+                }
+
+            }            
+            
+            &__file {
+
+                text-align: center;
+
+                &--header {
+                    @apply py-2;
+                }
+                &--content {
+                    @apply py-2;
+                }
+                &--download {
+                    @apply py-2;
+                }
+
+            }   
+
+            &__links {
+
+                @apply w-3/4;
+                @apply mx-auto;
+
+                &--header {
+
+                    @apply text-center;
+
+                }
+
+                &--links {
+
+                    @apply flex;
+                    @apply justify-center;
+                    @apply items-center;
+                    @apply flex-col;
+
+                    a {
+
+                        @apply my-4;
+
+                    }
+
+                }
+
+            }    
+
+        }
+
+        &.full_width {
+
+            &.squares {
+
+
+                .m__halved_banner__wrap__left {
+                    border-top-right-radius: 25px;
+                    border-bottom-right-radius: 25px;
+                    border-top-left-radius: 0px;
+                    border-bottom-left-radius: 0px;
+
+                    @media only screen and (max-width: 767px) {
+
+                        width: 80% !important;
+                        
+                    }
+
+
+                    &__copy {
+                        max-height: 300px;
+                    }
+
+                    &__image {
+                
+                        @apply w-1/2;
+                        @apply mx-auto;
+        
+                    }
+
+                }
+                .m__halved_banner__wrap__right {
+                    border-top-left-radius: 25px;
+                    border-bottom-left-radius: 25px;
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                    @media only screen and (max-width: 767px) {
+                        
+                        width: 80% !important;
+                        margin-left: 20% !important;
+
+                    }
+
+
+                    &__copy {
+                        max-height: 300px;
+                    }
+
+                    &__image {
+                
+                        @apply w-1/2;
+                        @apply mx-auto;
+        
+                    }
+
+                }
+
+            }
+
+        }
+        
+    }
+    
+}

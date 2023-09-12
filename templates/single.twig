@@ -1,0 +1,44 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    {% if post.type == 'resources' %}
+        {% include 'partials/flexible-hero.twig' %} 
+        {% include 'partials/flexible-resources.twig' %}
+    {% endif %}
+    {% if post.type == 'case-study' %}
+        {% include 'partials/flexible-hero.twig' %} 
+        {% include 'partials/flexible-case-studies.twig' %}
+    {% endif %}
+    {% if post.type == 'faqs' %}
+        {% include 'partials/flexible-hero.twig' %} 
+    {% endif %}
+    {% if post.type == 'post' %}
+        {% if breadcrumb %}
+            <div class="container mx-auto px-4 relative">
+                <div class="c__hero__breadcrumb">
+                    {{ breadcrumb }}   
+                </div> 
+            </div>
+        {% endif %}
+        <div class="blog__pagination">
+            <div class="container mx-auto px-4 relative">
+                <div class="blog__pagination__links flex flex-row justify-between my-4 md:mt-12 md:mb-8 relative">
+                    {% if previous_blog %}
+                        <div class="blog__pagination__links--previous absolute left-0">
+                            <a href="{{ previous_blog.link }}" class="cta--text prev">Previous</a>
+                        </div>
+                    {% endif %}
+                    {% if next_blog %}
+                        <div class="blog__pagination__links--next absolute right-0">
+                            <a href="{{ next_blog.link }}" class="cta--text next">Next</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% include 'partials/flexible-blogs.twig' %}
+    {% endif %}
+
+    {% include 'partials/flexible-content.twig' %} 
+{% endblock %}

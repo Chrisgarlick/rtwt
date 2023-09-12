@@ -1,0 +1,116 @@
+.n__blog {
+
+    &_fiftyfifty {
+        
+        &_block {
+            
+            &--text {
+                
+                &-header {
+                    
+                    
+                    
+                }
+                
+            }
+            
+            &--image {
+                
+                img {
+                    
+                    @apply w-4/5;
+                    @apply h-full;
+                    
+                }
+                
+                p.caption {
+                    
+                    @apply text-center;
+                    @apply text-sm;
+                    @apply mt-4;
+                    
+                }
+                
+            }
+            
+        }
+        
+        &__text {
+            
+            &--left, &--right {
+                
+                &.text-beg {
+                    @apply text-start;
+                }
+                
+                &.text-mid {
+                    @apply text-center;
+                }
+                
+                &.text-far {
+                    @apply text-end;
+                }
+                
+            }
+            
+        }
+        
+    }
+
+    &_testimonial {
+
+        &__wrap {
+            
+            @apply w-3/5;
+            @apply mx-auto;
+    
+            &--quote {
+    
+                @apply text-center;
+    
+                p {
+                    position: relative;
+                }
+                p::before {
+    
+                    content: '';
+                    background-image: url('../images/speech_marks.svg');
+                    @apply bg-cover;
+                    @apply bg-center;
+                    @apply bg-no-repeat;
+                    width: 65px;
+                    height: 52px;
+                    @apply block;
+                    @apply absolute;
+                    @apply left-[-5rem];
+                    @apply top-[0];
+    
+                }
+                p::after {
+    
+                    content: '';
+                    background-image: url('../images/speech_marks.svg');
+                    @apply bg-cover;
+                    @apply bg-center;
+                    @apply bg-no-repeat;
+                    transform: rotate(180deg);
+                    width: 65px;
+                    height: 52px;
+                    @apply block;
+                    @apply absolute;
+                    @apply right-[-5rem];
+                    @apply top-[0];
+    
+                }
+    
+            }
+    
+            &--speaker {
+                
+                @apply text-center;
+    
+            }
+        }
+    
+    }
+}

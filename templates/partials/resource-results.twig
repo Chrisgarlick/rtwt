@@ -1,0 +1,7 @@
+{% for post in posts %}
+    <div class="l__col l__col__span4 l__bottom" data-1024="6" data-768="12">
+        <div class="l__col__evenpad l__gridmaintain">
+            {% include ['partials/tease-'~post.post_type~'.twig', 'tease.twig'] %}
+        </div>
+    </div>
+{% endfor %}

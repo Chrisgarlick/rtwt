@@ -1,0 +1,20 @@
+<div class="n__blog_fiftyfifty {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+        {% for section in content.fiftyfifty_block %}
+            <div class="n__blog_fiftyfifty_block flex {% if section.content_side == 'left' %}flex-row {% else %}flex-row-reverse{% endif %} w-full {{ section.padding ? section.top_padding ~ ' ' ~  section.bottom_padding }}">
+                <div class="n__blog_fiftyfifty_block--text w-1/2">
+                    {% if section.title %}
+                        <h2 class="n__blog_fiftyfifty_block--text-header">{{ section.title }}</h2>
+                    {% endif %}
+                    {{ section.copy }}
+                </div>
+                <div class="n__blog_fiftyfifty_block--image flex flex-col items-center justify-center w-1/2">
+                    <img src="{{ section.image.url }}" alt="{{ section.image.alt }}">
+                    {% if section.caption %} 
+                        <p class="caption">{{ section.image.alt }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="m__full_width_image {% if not content.use_container %}background bg-cover bg-no-repeat bg-center{% endif %} {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }} {% if content.parallax %} parallax{% endif %}" {% if not content.use_container %}style="background-image: url('{{ content.full_width_image.url|towebp }}'){% endif %}">
+    {% if content.use_container %}
+        <div class="container mx-auto px-4">
+            <div class="m__full_width_image__wrapper w-full">
+                <img src="{{ content.full_width_image.url }}" alt="{{ content.full_width_image.alt }}">
+            </div>
+        </div>
+    {% endif %}
+</div>

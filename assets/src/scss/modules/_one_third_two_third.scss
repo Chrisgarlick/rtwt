@@ -1,0 +1,49 @@
+.m__one_third_two_third {
+
+    &_wrapper {
+
+        @apply grid;
+        @apply grid-cols-1;
+        @apply md:grid-cols-3;
+        @apply gap-4;
+        @apply md:gap-8;
+
+        &__left {
+
+            @apply col-span-1;
+
+            &--text {
+
+                h3 {
+                    
+                    @apply mt-4;
+
+                }
+
+            }
+
+            &--image {
+
+                @apply p-4;
+
+                img {
+
+                    max-width: 350px;
+                    @apply w-full;
+                    @apply mx-auto;
+
+                }
+
+            }
+
+        }
+
+        &__right {
+
+            @apply col-span-2;
+
+        }
+
+    }
+
+}

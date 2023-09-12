@@ -1,0 +1,40 @@
+.m__full_width_image {
+
+    &.background {
+
+        @apply h-[1024px];
+
+        &.parallax {
+
+            /* Set a specific height */
+            min-height: 500px;
+            @apply h-[500px];
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+    } 
+
+    &__wrapper {
+
+        img {
+
+
+        }
+
+        &.no_container {
+
+            max-width: 1920px;
+
+            img {
+                @apply w-full;
+
+            }
+        }
+    }
+}

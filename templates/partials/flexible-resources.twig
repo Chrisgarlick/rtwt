@@ -1,0 +1,6 @@
+{% for content in page.res_content %}
+    {# The name of the module should correspond with the name of the acf flexible component #}
+    {% if content.acf_fc_layout != 'global_component' %} 
+        {% include 'modules/resources/module-'~ content.acf_fc_layout ~'.twig' %} 
+    {% endif %}
+{% endfor %}

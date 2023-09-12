@@ -1,0 +1,162 @@
+{
+    "key": "group_64c3c1791cf15",
+    "title": "Flexible - Hero",
+    "fields": [
+        {
+            "key": "field_64c3c17922a19",
+            "label": "Flexible Hero",
+            "name": "flexible_hero",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_64c3c23a16028": {
+                    "key": "layout_64c3c23a16028",
+                    "name": "primary_hero",
+                    "label": "Primary Hero",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64c3c26a16029",
+                            "label": "Primary Hero Clone",
+                            "name": "primary_hero_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_64c3c1b8480c8"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64c3dead3455a": {
+                    "key": "layout_64c3dead3455a",
+                    "name": "secondary_hero",
+                    "label": "Secondary Hero",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64c3debb3455b",
+                            "label": "Secondary Hero Clone",
+                            "name": "secondary_hero_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_64c3de00ebbec"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64c3e225252de": {
+                    "key": "layout_64c3e225252de",
+                    "name": "small_hero",
+                    "label": "Small Hero",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64c3e22b252df",
+                            "label": "Small Hero Clone",
+                            "name": "small_hero_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_64c3e1ad95b1f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Row"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resources"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "case-study"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "faq"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1691148607
+}

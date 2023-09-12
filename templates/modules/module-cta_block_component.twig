@@ -1,0 +1,22 @@
+<div class="m__cta_block {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}" style="{% if content.make_background_gradient %}background:{{ content.gradient_style ? content.gradient_style }}-gradient({% if content.gradient_style == 'radial' %}circle{% else %}{% if content.gradient_angle == "top-bottom" %}0deg{% else %}90deg{% endif %}{% endif %}, #{{ content.hex_colour }} 0%, #{{ content.gradient_hex_colour }} 100%);{% endif %}">
+    <div class="container mx-auto px-4">
+        <div class="m__cta_block__wrapper w-full">
+            <div class="m__cta_block__wrapper--title text-center">
+                <h2>{{ content.title }}</h2>
+            </div>
+            <div class="m__cta_block__wrapper--content text-center w-full {% if content.thinner %}md:w-3/5 mx-auto {% endif %}">
+                <p>{{ content.copy }}</p>
+            </div>
+            {% if content.first_cta.url or content.second_cta.url %}
+                <div class="m__cta_block__wrapper--links flex flex-col md:flex-row justify-center items-center my-4">
+                {% if content.first_cta.url %}
+                    <a class="mb-4 md:mb-0 md:mr-2 cta cta--{{ content.cta_style ? content.cta_style }}" href="{{ content.first_cta.url }}" target="{{ content.first_cta.link.target ? content.first_cta.link.target : '_self' }}">{{ content.first_cta.title }}</a>
+                {% endif %}
+                {% if content.second_cta.url %}
+                    <a class="md:ml-2 cta cta--{{ content.cta_style ? content.cta_style }}" href="{{ content.second_cta.url }}" target="{{ content.second_cta.link.target ? content.second_cta.link.target : '_self' }}">{{ content.second_cta.title }}</a>
+                {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

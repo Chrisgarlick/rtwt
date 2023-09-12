@@ -1,0 +1,87 @@
+.m__nav{
+    &__wrap{
+
+    }
+    &__item{
+        a{
+            @apply text-white;
+        }
+        &.current {
+            a {
+                @apply underline;
+                @apply decoration-red;
+                @apply decoration-2;
+            }
+        }
+    }
+    &__item + &__item{
+        @apply ml-10;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .m__nav {
+
+        @apply absolute;
+        @apply w-full;
+        @apply h-full;
+        @apply left-0;
+        @apply top-0;
+        @apply bg-black;
+        z-index:11;
+
+        &__wrap {
+
+            @apply flex-col;
+            @apply mt-20;
+
+        }
+        &__item {
+
+            @apply ml-10;
+
+            &.current {
+
+                @apply ml-10;
+
+            }
+
+        }
+        
+    }
+    .hamburger {
+
+        z-index: 111;
+
+        span.line {
+
+            @apply bg-white;
+            @apply w-[30px];
+            @apply h-[3px];
+            @apply block;
+            border-radius: 5px;
+            @apply my-2;
+            @apply relative;
+            transition: transform 0.3s;
+
+
+        }
+
+        .top.active {
+            transform: translateY(11px) rotate(45deg);
+        }
+        
+        .middle.active {
+            opacity: 0;
+        }
+        
+        .bottom.active {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+        
+        
+
+    }
+
+}

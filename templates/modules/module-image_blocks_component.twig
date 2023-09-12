@@ -1,0 +1,30 @@
+<div class="m__image_blocks {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+        <div class="m__image_blocks__wrapper w-full flex flex-col justify-evenly items-start mx-auto">
+            <div class="m__image_blocks__wrapper--title w-1/2 mx-auto text-center mb-8">
+                <h3>{{ content.section_title }}</h3>
+            </div>
+            <div class="m__image_blocks__wrapper__content grid grid-cols-1 gap-8 lg:gap-4 {% if content.block|length <= 2 %}md:gap-8 lg:gap-8 md:grid-cols-2 {% elseif content.block|length == 3 %}md:grid-cols-3 {% elseif content.block|length == 4 %}md:grid-cols-2 lg:grid-cols-4 {% elseif content.block|length == 5 %}md:grid-cols-3 lg:grid-cols-5 {% endif %} ">
+                {% for section in content.block %}
+                    <div class="m__image_blocks__wrapper__content--individual relative w-full">
+                        <img src="{{ section.image.url }}" alt="{{ section.image.alt }}">
+                        {% if section.title %}
+                            <h4 class="my-4">{{ section.title }}</h4>
+                        {% endif %}
+                        {% if section.description %}
+                            <p class="mt-4 mb-8">{{ section.description }}</p>
+                        {% endif %}
+                        {% if section.block_link %}
+                            <a class="cta--text absolute bottom-0" href="{{ section.block_link.url }}" target="{{ section.block_link.link.target ? section.block_link.link.target : '_self' }}">{{ section.block_link.title }}</a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="m__image_blocks__wrapper__links w-full flex justify-center items-center mt-8">
+                <a class="mr-2 cta cta--{{ content.cta_style ? content.cta_style }}" href="{{ content.cta.url }}" target="{{ content.cta.link.target ? content.cta.link.target : '_self' }}">{{ content.cta.title }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# {% if content.block|length <= 2 %}md:w-1/2 {% elseif content.block|length == 3 %}md:w-1/3 {% elseif content.block|length == 4 %}md:w-1/4 {% elseif content.block|length == 5 %}md:w-1/3 lg:w-1/5 {% endif %} #}

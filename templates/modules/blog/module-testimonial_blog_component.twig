@@ -1,0 +1,16 @@
+<div class="n__blog_testimonial {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+        <div class="n__blog_testimonial__wrap">
+            <div class="n__blog_testimonial__wrap--quote">
+                {% if content.quote %}
+                    <p>{{ content.quote }}</p>
+                {% endif %}
+            </div>
+            <div class="n__blog_testimonial__wrap--speaker">
+                {% if content.quotee %}
+                    <h4>{{ content.quotee }}</h4>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

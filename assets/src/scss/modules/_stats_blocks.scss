@@ -1,0 +1,24 @@
+.m__stats_blocks {
+
+    &__wrapper {
+
+        &__content {
+
+            &--individual {
+
+                h4 {
+
+                    @apply text-2xl;
+
+                }
+
+                p {
+
+                    @apply text-xl;
+
+                }
+
+            }
+        }
+    }
+}

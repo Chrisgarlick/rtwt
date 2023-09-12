@@ -1,0 +1,32 @@
+<div class="n__blog_fiftyfifty {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+        {% for section in content.fiftyfifty_content %}
+            <div class="n__blog_fiftyfifty__text w-full flex flex-row justify-between gap-8 {{ section.padding ? section.top_padding ~ ' ' ~  section.bottom_padding }}">
+                <div class="n__blog_fiftyfifty__text--left w-1/2 {{ section.alignment ? section.alignment }}">
+                    {% if section.left_title %}
+                        <div class="n__blog_fiftyfifty__text--left--header">
+                            <h2>{{ section.left_title }}</h2>
+                        </div>
+                    {% endif %}
+                    {% if section.left_copy %}
+                        <div class="n__blog_fiftyfifty__text--left--copy">
+                            {{ section.left_copy }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="m__fiftyfifty__text--right w-1/2 {{ section.alignment ? section.alignment }}">
+                    {% if section.right_title %}
+                        <div class="m__fiftyfifty__text--left--header">
+                            <h2>{{ section.right_title }}</h2>
+                        </div>
+                    {% endif %}
+                    {% if section.right_copy %}
+                        <div class="m__fiftyfifty__text--left--copy">
+                            {{ section.right_copy }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

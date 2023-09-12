@@ -1,0 +1,20 @@
+<header id="site-header" class="g__header">
+    <div class="g__header py-4 shadow">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="g__header__logo flex items-center">
+                    <a href="{{ site.link }}" aria-label="{{ site.name }} logo">
+                        {% if global.global_logo.url %}
+                            <img src="{{ global.global_logo.url }}" alt="{{ site.name }}" width="150" height="30">
+                        {% else %}
+                            Home Page
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="g__header__nav flex items-center flex-1">
+                    {% include "partials/navigation.twig" with { 'nav' : menu.main_nav, 'pageid' : pageid } %} 
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

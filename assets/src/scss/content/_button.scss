@@ -1,0 +1,99 @@
+.cta{
+    @apply py-2;
+    @apply px-6;
+    @apply text-center;
+    @apply rounded-3xl;
+    @apply cursor-pointer;
+    @apply text-xs;
+    @apply font-medium;
+    animation: all 0.5s;
+ 
+    &:hover{
+        animation: all 0.5s;
+    }
+
+    &--primary{
+        @apply bg-white;
+        @apply border-black;
+        @apply text-black;
+        @apply border-2;
+        @apply font-bold;
+
+
+        &:hover{
+          
+            @apply bg-black;
+            @apply border-black;
+            @apply text-white;
+
+        }
+
+        &:focus, &:active{
+            @apply bg-red;
+            @apply border-red;
+            @apply text-white;
+        }
+
+    }
+
+    &--secondary{
+        @apply text-white;
+        @apply border-2;
+        @apply border-black;
+        @apply bg-black;
+        @apply font-bold;
+
+
+        &:hover{
+            @apply bg-white;
+            @apply text-black; 
+            @apply border-black;
+        }
+
+        &:focus, &:active{
+            @apply bg-red;
+            @apply border-red;
+            @apply text-white;
+
+        }
+    }
+
+    &--tertiary{
+        @apply bg-grey;
+        @apply border-2;
+        @apply border-black;
+        @apply font-bold;
+
+
+        &:hover{
+          
+            @apply bg-black;
+            @apply border-black;
+            @apply text-grey;
+
+        }
+
+        &:focus, &:active{
+            @apply bg-white;
+            @apply border-white;
+            @apply text-quarternary; 
+
+        }
+    }
+
+
+    &--text{
+        min-width: auto;
+        @apply uppercase;
+        @apply font-medium;
+        @apply text-black;
+        @apply no-underline;
+        @apply decoration-red;
+        @apply decoration-2;
+
+        &:hover, &:focus, &:active {
+            @apply underline;
+        }
+    }
+
+}

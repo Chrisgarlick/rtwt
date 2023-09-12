@@ -1,0 +1,24 @@
+<div class="m__one_column {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+        <div class="m__one_column__wrapper {% if content.thinner %}w-5/6 mx-auto {% else %}w-full {% endif %} {{ content.alignment ? content.alignment }}">
+            {% if content.title %}
+                <div class="m__one_column__wrapper--title my-4">
+                    <h2 class="m__one_column__wrapper--title-header">{{ content.title }}</h2>
+                </div>
+            {% endif %}
+            {% if content.copy %}
+                <div class="m__one_column__wrapper--copy">{{ content.copy }}</div>
+            {% endif %}
+            {% if content.first_cta.url or content.second_cta.url %}
+                <div class="m__one_column__wrapper--links flex {% if content.alignment == 'text-beg' %}justify-start{% elseif content.alignment == 'text-mid' %}justify-center{% elseif content.alignment == 'text-far' %}justify-end{% endif %} items-center my-4">
+                {% if content.first_cta.url %}
+                    <a class="mr-2 cta cta--{{ content.cta_style ? content.cta_style }}" href="{{ content.first_cta.url }}" target="{{ content.first_cta.link.target ? content.first_cta.link.target : '_self' }}">{{ content.first_cta.title }}</a>
+                {% endif %}
+                {% if content.second_cta.url %}
+                    <a class="ml-2 cta cta--{{ content.cta_style ? content.cta_style }}" href="{{ content.second_cta.url }}" target="{{ content.second_cta.link.target ? content.second_cta.link.target : '_self' }}">{{ content.second_cta.title }}</a>
+                {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

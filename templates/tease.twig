@@ -1,0 +1,20 @@
+<div class="m__card__wrap w-full">
+	<article class="m__card shadow m__card--{{post.post_type}} relative rounded-xl w-full">
+		{% block content %}
+			<a href="{{post.link}}" class="w-full flex flex-col">
+				<div class="m__card__img rounded-t-xl bg-cover bg-no-repeat bg-center h-[232px] w-full" style="background-image:url('{{ post.thumbnail|towebp }}');">
+					<span class="sr-only">{{post.thumbnail.alt}}</span>
+				</div>
+				<div class="m__card__content rounded-b-xl bg-white p-8 flex-1">
+					<h2 class="mb-2">{{post.title}}</h2>
+					<div class="mt-2 mb-6 flex-1">
+						{{ post.preview.length(20).end('').read_more(false)|wpautop }}
+					</div>
+					<div class="mt-auto"> 
+						<span class="cta--text cursor-pointer inline-block">{{ __('Read More', 'cd-theme') }}</span> 
+					</div>
+			    </div>
+			</a>
+		{% endblock %}
+	</article>
+</div>

@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// essentials
+@import 'essentials/fonts';
+@import 'essentials/global_variables';
+@import 'essentials/type';
+@import 'essentials/base';
+
+
+// content
+@import 'content/wordpress';
+@import 'content/button';
+@import 'content/animations';
+
+
+// Layout
+@import 'layout/navigation';
+@import 'layout/headers';
+@import 'layout/hero';
+@import 'layout/cards';
+@import 'layout/footer';
+
+// modules
+@import 'modules/one_column';
+@import 'modules/fiftyfifty';
+@import 'modules/icon_blocks';
+@import 'modules/stats_blocks';
+@import 'modules/full_width_image';
+@import 'modules/cta_block';
+@import 'modules/tabs';
+@import 'modules/testimonial';
+@import 'modules/accordion';
+@import 'modules/newsletter';
+@import 'modules/halved_banner';
+@import 'modules/full_width_carousel';
+@import 'modules/blog';
+@import 'modules/case_study';
+@import 'modules/one_third_two_third';
+@import 'modules/related';

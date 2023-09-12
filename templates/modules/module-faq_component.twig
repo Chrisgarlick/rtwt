@@ -1,0 +1,17 @@
+<div class="m__accordion__faq {{ content.add_padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+        {{ content.title ? '<h2 class="mb-8">' ~ content.title ~ '</h2>' }}
+        {% for a in content.faq_posts %}
+            <div class="m__accordion__faq--item flex flex-col relative">
+                <h4 class="m__accordion__faq--item__heading">
+                   {{ a.title }}
+                </h4>
+                <div class="m__accordion__faq--item__body w-3/4 mx-auto">
+                    {{ a.content|wpautop }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+ </div>
+
+

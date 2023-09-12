@@ -1,0 +1,16 @@
+<div class="m__accordion {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+        <div class="m__accordion__wrap">
+            {% for accordion in content.all_accordions %}
+                <div class="m__accordion__wrap__individual w-full">
+                    <div class="m__accordion__wrap__individual--header">
+                        <h2>{{ accordion.accordion_header }}</h2>
+                    </div>
+                    <div class="m__accordion__wrap__individual--content">
+                        {{ accordion.accordion_content }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

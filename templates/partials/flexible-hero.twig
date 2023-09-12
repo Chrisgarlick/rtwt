@@ -1,0 +1,4 @@
+{% for hero in page.hero %}
+    {# The name of the header should correspond with the name of the acf flexiable component #}
+    {% include 'headers/header-'~ hero.acf_fc_layout ~'.twig' %}
+{% endfor %}

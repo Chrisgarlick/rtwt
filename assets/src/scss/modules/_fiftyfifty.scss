@@ -1,0 +1,57 @@
+.m__fiftyfifty {
+
+    &_block {
+
+        &--text {
+
+            &-header {
+
+
+
+            }
+
+        }
+
+        &--image {
+
+            img {
+
+                @apply w-full;
+                @apply md:w-4/5;
+                @apply h-auto;
+
+            }
+
+            p.caption {
+
+                @apply text-center;
+                @apply text-sm;
+                @apply mt-4;
+
+            }
+
+        }
+
+    }
+
+    &__text {
+
+        &--left, &--right {
+
+            &.text-beg {
+                @apply text-start;
+            }
+
+            &.text-mid {
+                @apply text-center;
+            }
+
+            &.text-far {
+                @apply text-end;
+            }
+
+        }
+
+    }
+
+}

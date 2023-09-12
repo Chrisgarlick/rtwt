@@ -1,0 +1,92 @@
+.m__newsletter__wrap {
+    
+    @apply text-center;
+    @apply w-full;
+    @apply md:w-4/5;
+    @apply mx-auto;
+    
+    &--form {
+
+        form {
+
+            @apply flex;
+            @apply flex-col;
+            @apply md:flex-row;
+            @apply justify-start;
+            @apply items-start;
+            
+            input {
+                
+                @apply border-2;
+                @apply border-black;
+                @apply w-full;
+                @apply py-2;
+                @apply px-2;
+                
+            }
+            p:first-of-type {
+                
+                @apply w-full;
+                @apply md:w-4/5;
+                
+            }
+            p:last-of-type {
+                
+                @apply w-1/2;
+                @apply mx-auto;
+                @apply md:mx-0;
+                @apply md:w-1/5;
+                @apply text-center;
+                
+            }
+            input.wpcf7-submit {
+                @apply py-3;
+                @apply px-6;
+                @apply text-center;
+                @apply cursor-pointer;
+                @apply text-xs;
+                @apply font-medium;
+                animation: all 0.5s;
+                @apply bg-black;
+                @apply border-black;
+                @apply text-white;
+                @apply border-2;
+                @apply font-bold;
+                @apply text-center;
+                @apply uppercase;
+                
+                &:hover{
+                    
+                    animation: all 0.5s;
+                    @apply bg-white;
+                    @apply border-black;
+                    @apply text-black;
+                    @apply border-l-0;
+                    
+                }
+                
+                &:focus, &:active{
+                    
+                    @apply bg-red;
+                    @apply border-red;
+                    @apply text-white;
+                    
+                }
+                
+            }
+
+            .wpcf7-spinner, br {
+
+                @apply hidden;
+
+            }
+            
+            label {
+                
+                @apply hidden;
+                
+            }
+            
+        }
+    }
+}

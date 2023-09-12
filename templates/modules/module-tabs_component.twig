@@ -1,0 +1,53 @@
+<div class="m__tabs {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+        <div class="m__tabs__title text-center my-8">
+            <h2>{{ content.section_title }}<h2>
+        </div>
+        <div class="m__tabs__wrapper flex {% if content.alignment == 'vertical' %} flex-col md:flex-row {% if content.side == 'right' %} flex-row-reverse {% endif %} {% else %} flex-col {% endif %} w-full my-4">
+            <div class="m__tabs__wrapper__headers flex {% if content.alignment == 'vertical' %} flex-row md:flex-col w-full md:w-1/2  {% else %} flex-row w-full my-8 {% endif %} justify-evenly items-center">
+                {% for section in content.tab_content %}
+                    <div class="m__tabs__wrapper__headers--title">
+                        <h3{% if loop.index == 1 %} class="active"{% endif %}>{{ section.title }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="m__tabs__wrapper__content {% if content.alignment == 'horizontal' %} flex flex-row w-full {% else %} w-full md:w-1/2 {% endif %}">
+                {% for section in content.tab_content %}
+                    {% if content.alignment == 'vertical' %}
+                        <div class="m__tabs__wrapper__content__js {{ section.padding ? section.top_padding ~ ' ' ~  section.bottom_padding }} {% if loop.index == 1 %}active{% endif %}" data-tabs="{{ section.title }}">
+                            <div class="m__tabs__wrapper__content__js__vertical">
+                                <div class="m__tabs__wrapper__content__js__vertical--title">
+                                    <h4>{{ section.title }} </h4>
+                                </div>
+                                <div class="m__tabs__wrapper__content__js__vertical--copy">
+                                    {{ section.copy }}
+                                </div>
+                                <div class="m__tabs__wrapper__content__js__vertical--image">
+                                    <img src="{{ section.tab_image.url }}" alt="{{ section.tab_image.alt }}">
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="m__tabs__wrapper__content__js {{ section.padding ? section.top_padding ~ ' ' ~  section.bottom_padding }} {% if loop.index == 1 %}active{% endif %}" data-tabs="{{ section.title }}">
+                            <div class="m__tabs__wrapper__content__js__horizontal flex flex-col {% if section.content_side == 'left' %} md:flex-row {% else %} md:flex-row-reverse {% endif %} items-stretch gap-16">
+                                <div class="m__tabs__wrapper__content__js__horizontal__left w-full md:w-1/2">
+                                    <div class="m__tabs__wrapper__content__js__horizontal__left--title">
+                                        <h4>{{ section.title }} </h4>
+                                    </div>
+                                    <div class="m__tabs__wrapper__content__js__horizontal__left--copy">
+                                        {{ section.copy }}
+                                    </div>
+                                </div>
+                                <div class="m__tabs__wrapper__content__js__horizontal__right w-full md:w-1/2">
+                                    <div class="m__tabs__wrapper__content__js__horizontal__right--image">
+                                        <img src="{{ section.tab_image.url }}" alt="{{ section.tab_image.alt }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

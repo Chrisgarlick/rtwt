@@ -1,0 +1,37 @@
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5{
+    @apply text-black;
+    @apply font-medium;
+    display: block;
+}
+
+h1{
+    @apply text-2xl;
+
+    @media only screen and (max-width: 767px){
+        @apply text-xl;
+    }
+}
+
+h2, .h2{
+    @apply text-xl;
+
+    @media only screen and (max-width: 767px){
+        @apply text-lg;
+    }
+}
+
+h3{
+    @apply text-lg;
+
+    @media only screen and (max-width: 767px){
+        @apply text-base;
+    }
+}
+
+h4{
+    @apply text-md;
+
+    @media only screen and (max-width: 767px){
+        @apply text-base;
+    }
+}

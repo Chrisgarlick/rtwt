@@ -1,0 +1,19 @@
+/******************************************************************
+Theme Name: Chris
+Description: This theme was built by Chris
+Author: Chris
+Author URI: https://beginnerscode.co.uk/
+Text Domain: cg_base
+Version: 1.0
+******************************************************************/
+
+/*
+WordPress
+So Theme Check (http://wordpress.org/plugins/theme-check/)
+needs these classes in the CSS even though they are in the 
+REAL stylesheet in library/scss/style.css.
+*/
+
+.sticky {}          /* DO NOT EDIT THIS */
+.gallery-caption {} /* THESE ARE NEEDED */
+.bypostauthor {}    /* TO KEEP THEME CHECK HAPPY */

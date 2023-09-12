@@ -1,0 +1,28 @@
+<div class="h__secondary_hero {% if breadcrumb %}relative{% endif %}" {% if hero.background_colour %}style="background-color: #{{ hero.background_colour }}"{% endif %}>
+    <div class="container mx-auto px-4 h-full">
+        {% if breadcrumb %}
+            <div class="c__hero__breadcrumb absolute">
+                {{ breadcrumb }}   
+            </div>
+        {% endif %}
+        <div class="h__secondary_hero__wrap w-full flex flex-col md:flex-row justify-center items-center gap-4 md:gap-24 h-full">
+            <div class="h__secondary_hero__wrap--left w-full md:w-1/2">
+                <div class="h__primary_hero__wrap--left-title">
+                    <h1>{{ hero.hero_title }}</h1>
+                </div>
+                <div class="h__primary_hero__wrap--left-subheader">
+                    <p>{{ hero.hero_subheader }}</p>
+                </div>
+                {% if hero.cta.url or hero.second_cta.url %}
+                    <div class="h__primary_hero__wrap--left-links">
+                        <a class="mr-2 cta cta--{{ hero.cta_style ? hero.cta_style }}" href="{{ hero.cta.url }}" target="{{ hero.cta.link.target ? hero.cta.link.target : '_self' }}">{{ hero.cta.title }}</a>
+                        <a class="ml-2 cta cta--{{ hero.cta_style ? hero.cta_style }}" href="{{ hero.second_cta.url }}" target="{{ hero.second_cta.link.target ? hero.second_cta.link.target : '_self' }}">{{ hero.second_cta.title }}</a>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="h__secondary_hero__wrap--right w-full md:w-1/2">
+                <img src="{{ hero.image.url }}" alt="{{ hero.image.alt }}">
+            </div>
+        </div>
+    </div>
+</div>

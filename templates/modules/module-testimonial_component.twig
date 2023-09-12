@@ -1,0 +1,21 @@
+<div class="m__testimonial {{ content.padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+    <div class="container mx-auto px-4">
+        <div class="m__testimonial__wrap">
+            <div class="m__testimonial__wrap--quote">
+                {% if content.quote %}
+                    <p>{{ content.quote }}</p>
+                {% endif %}
+            </div>
+            <div class="m__testimonial__wrap--speaker">
+                {% if content.quotee %}
+                    <h4>{{ content.quotee }}</h4>
+                {% endif %}
+            </div>
+            {% if content.cta.url %}
+                <div class="m__testimonial__wrap-links flex justify-start items-center my-4">
+                    <a class="mx-auto cta cta--{{ content.cta_style ? content.cta_style }}" href="{{ content.cta.url }}" target="{{ content.cta.link.target ? content.cta.link.target : '_self' }}">{{ content.cta.title }}</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

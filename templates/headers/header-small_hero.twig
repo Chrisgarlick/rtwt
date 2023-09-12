@@ -1,0 +1,27 @@
+<div class="h__small_hero {% if breadcrumb %}relative{% endif %}" {% if hero.background_colour %}style="background-color: #{{ hero.background_colour }}"{% endif %}>
+    <div class="container mx-auto px-4 h-full">
+        {% if breadcrumb %}
+            <div class="c__hero__breadcrumb absolute">
+                {{ breadcrumb }}   
+            </div> 
+        {% endif %}
+        <div class="h__small_hero__wrap h-full flex flex-col justify-center items-center text-center">
+            <div class="h__small_hero__wrap--title">
+                <h1>{{ hero.hero_title }}</h1>
+            </div>
+            <div class="h__small_hero__wrap--subheader w-4/5">
+                <p>{{ hero.hero_subheader }}</p>
+            </div>
+            {% if hero.cta.url or hero.second_cta.url %}
+                <div class="h__small_hero__wrap--links">
+                    {% if hero.cta.url %}
+                        <a class="mr-2 cta cta--{{ hero.cta_style ? hero.cta_style }}" href="{{ hero.cta.url }}" target="{{ hero.cta.link.target ? hero.cta.link.target : '_self' }}">{{ hero.cta.title }}</a>
+                    {% endif %}
+                    {% if hero.second_cta.url %}
+                        <a class="ml-2 cta cta--{{ hero.cta_style ? hero.cta_style }}" href="{{ hero.second_cta.url }}" target="{{ hero.second_cta.link.target ? hero.second_cta.link.target : '_self' }}">{{ hero.second_cta.title }}</a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
