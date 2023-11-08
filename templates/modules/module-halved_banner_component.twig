@@ -57,12 +57,12 @@
                         {% endif %}
                     </div>
                 {% elseif left_media == 'links' %}
-                    <div class="m__halved_banner__wrap__left__{{ left_media }}">
+                    <div class="m__halved_banner__wrap__left__{{ left_media }} items-start">
                         <div class="m__halved_banner__wrap__left__{{ left_media }}--header">
                             <h4>Additional Links</h4>
                         </div>
                         {% if content.left_side.link_one.url or content.left_side.link_two.url or content.left_side.link_three.url %}
-                            <div class="m__halved_banner__wrap__left__{{ left_media }}--links flex flex-col">
+                            <div class="m__halved_banner__wrap__left__{{ left_media }}--links flex flex-col items-start">
                                 {% if content.left_side.link_one.url %}
                                     <a class="mr-2 cta cta--{{ content.left_side.cta_style }}" href="{{ content.left_side.link_one.url }}" target="{{ content.left_side.link_one.link.target ? content.left_side.link_one.link.target : '_self' }}">{{ content.left_side.link_one.title }}</a>
                                 {% endif %}
@@ -128,12 +128,12 @@
                         {% endif %}
                     </div>
                 {% elseif right_media == 'links' %}
-                    <div class="m__halved_banner__wrap__left__{{ right_media }}">
+                    <div class="m__halved_banner__wrap__right__{{ right_media }} items-start">
                         <div class="m__halved_banner__wrap__right__{{ right_media }}--header">
                             <h4>Additional Links</h4>
                         </div>
                         {% if content.right_side.link_one.url or content.right_side.link_two.url or content.right_side.link_three.url %}
-                            <div class="m__halved_banner__wrap__right__{{ right_media }}--links flex flex-col">
+                            <div class="m__halved_banner__wrap__right__{{ right_media }}--links flex flex-col items-start">
                                 {% if content.right_side.link_one.url %}
                                     <a class="mr-2 cta cta--{{ content.right_side.cta_style }}" href="{{ content.right_side.link_one.url }}" target="{{ content.right_side.link_one.link.target ? content.right_side.link_one.link.target : '_self' }}">{{ content.right_side.link_one.title }}</a>
                                 {% endif %}

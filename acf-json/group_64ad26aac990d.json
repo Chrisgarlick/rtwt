@@ -499,14 +499,14 @@
                 },
                 "layout_64cbaaad13eb9": {
                     "key": "layout_64cbaaad13eb9",
-                    "name": "related_case_studies_component",
-                    "label": "Related Case Studies Component",
+                    "name": "related_resources_component",
+                    "label": "Related Resources Component",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_64fef86b533b7",
-                            "label": "Related Case Studies Component Clone",
-                            "name": "related_case_studies_component_clone",
+                            "label": "Related Resources Component Clone",
+                            "name": "related_resources_component_clone",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -560,6 +560,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6512e6758b230": {
+                    "key": "layout_6512e6758b230",
+                    "name": "related_testimonials_component",
+                    "label": "Related Testimonials Component",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6512e67f8b231",
+                            "label": "Related Testimonials Component Clone",
+                            "name": "related_testimonials_component_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6512e5f483bda"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -585,5 +617,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694431407
+    "modified": 1695737497
 }

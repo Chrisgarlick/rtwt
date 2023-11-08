@@ -7,8 +7,8 @@
 		<div class="c__filter mt-8">
 			<div class="container mx-auto px-4">
 				<div class="c__filter__links hidden md:block">
-					<span class="mr-4 font-bold">{{ __('Filter by', 'cd-theme') }}</span>
-					<a href="{{ all_news }}" class="cta cta--primary">{{ __('All', 'cd-theme') }}</a>
+					<span class="mr-4 font-bold">{{ __('Filter by', 'cg-theme') }}</span>
+					<a href="{{ cs_all_news }}" class="cta cta--primary">{{ __('All', 'cg-theme') }}</a>
 					{% for term in terms %} 
 						<span class="{{ term.term_id == active_filter ? 'active' }} cta cta--primary" data-id="{{ term.term_id }}">{{ term.name }}</span>
 					{% endfor %}
@@ -16,8 +16,8 @@
 				<div class="block md:hidden">
 					<label class="sr-only" for="filter">{{ __('Filter by', 'cd-theme') }}</label>
 					<select id="filter" class="border-2 border-black p-2 rounded-2xl w-1/2" name="filter" onchange="if (this.value) window.location.href=this.value">
-						<option value="" disabled {{ active_filter  ? '' : 'selected' }}>{{ __('Filter by', 'cd-theme') }}</option>
-						<option value="{{ all_news }}">{{ __('All', 'cd-theme') }}</option>
+						<option value="" disabled {{ active_filter  ? '' : 'selected' }}>{{ __('Filter by', 'cg-theme') }}</option>
+						<option value="{{ all_news }}">{{ __('All', 'cg-theme') }}</option>
 						{% for term in terms %} 
 							<option value="{{ term.term_id }}" {{ term.term_id == active_filter ? 'selected' }}>{{ term.name }}</option>
 						{% endfor %}
@@ -30,7 +30,7 @@
         <div class="container mx-auto px-4">
 			{% if posts|length > 0 %}
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-					{% include ['partials/case-studies-results.twig', 'tease.twig'] %}
+					{% include ['partials/testimonials-results.twig', 'tease.twig'] %}
 				</div>
 				<div class="w-full">
 					{# {% include 'partials/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %} #}

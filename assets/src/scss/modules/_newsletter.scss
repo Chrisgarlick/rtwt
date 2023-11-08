@@ -18,7 +18,7 @@
             input {
                 
                 @apply border-2;
-                @apply border-black;
+                @apply border-primary;
                 @apply w-full;
                 @apply py-2;
                 @apply px-2;
@@ -47,8 +47,8 @@
                 @apply text-xs;
                 @apply font-medium;
                 animation: all 0.5s;
-                @apply bg-black;
-                @apply border-black;
+                @apply bg-primary;
+                @apply border-primary;
                 @apply text-white;
                 @apply border-2;
                 @apply font-bold;
@@ -59,8 +59,8 @@
                     
                     animation: all 0.5s;
                     @apply bg-white;
-                    @apply border-black;
-                    @apply text-black;
+                    @apply border-primary;
+                    @apply text-primary;
                     @apply border-l-0;
                     
                 }

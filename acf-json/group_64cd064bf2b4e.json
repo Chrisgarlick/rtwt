@@ -1,11 +1,11 @@
 {
     "key": "group_64cd064bf2b4e",
-    "title": "Flexible - Case Study",
+    "title": "Flexible - Testimonials",
     "fields": [
         {
             "key": "field_64cd064cb95d9",
-            "label": "Flexible Case Study",
-            "name": "flexible_case_study",
+            "label": "Flexible Testimonials",
+            "name": "flexible_testimonials",
             "aria-label": "",
             "type": "flexible_content",
             "instructions": "",
@@ -17,16 +17,16 @@
                 "id": ""
             },
             "layouts": {
-                "layout_64cd0650374f5": {
-                    "key": "layout_64cd0650374f5",
-                    "name": "case_study_component",
-                    "label": "Case Study Component",
+                "layout_6509a10687ff5": {
+                    "key": "layout_6509a10687ff5",
+                    "name": "testimonials_component",
+                    "label": "Testimonials Component",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_64cd067fb95da",
-                            "label": "Case Study Component Clone",
-                            "name": "case_study_component_clone",
+                            "key": "field_6509a11787ff7",
+                            "label": "Testimonials Component Clone",
+                            "name": "testimonials_component_clone",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -38,7 +38,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_64cd069206b4e"
+                                "group_6509a05890cbe"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -60,7 +60,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "case-study"
+                "value": "testimonials"
             }
         ]
     ],
@@ -73,5 +73,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1691158242
+    "modified": 1695131781
 }

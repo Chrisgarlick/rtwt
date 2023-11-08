@@ -116,9 +116,44 @@ $(document).ready(function() {
       $('.m__nav#nav-main').toggleClass('hidden');
       $('.g__header__nav .hamburger .line').toggleClass('active');
     });
-    
+    $(".m__nav__item-sub").on('click', function(event) {
+      if ($(this).siblings().hasClass('subnav')) {
+        console.log('parent nav wrap');
+        event.preventDefault();
+        let subnav = $(this).siblings()
+        subnav = subnav.eq(1)
+        subnav.toggleClass('hidden')
+        $('#site-content').toggleClass('expanded-nav')
+      } else {
+        console.log('parent-no-nav-wrap')
+        let subnav = $(this).find('.subnav')
+        subnav.toggleClass('hidden')
+        $('#site-content').toggleClass('expanded-nav')
+      }
+    });    
+    $('.subnav .subnav__back').on('click', function() {
+      $(this).parent().addClass('hidden');
+    });
+    // $(".m__nav__item").on('mouseout', function() {
+    //   let subnav = $(this).find('.subnav')
+    //   subnav.addClass('hidden')
+    // });
 
-
-
-    
+    // Related Testimonials Slider 
+    function manageSliders() {
+      $('.m__related_testimonials').each(function() {
+        var slider = $(this).find('.m__related_testimonials__wrapper.add_slider');
+        var settings = {
+          dots: true,
+          arrows: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          prevArrow: $(this).find('.prev-btn'),
+          nextArrow: $(this).find('.next-btn')
+        };
+        slider.slick(settings);
+      }); 
+     $('.m__related_testimonials__wrapper.add_slider .slick-dots li button').text('');
+    }
+    manageSliders();
 });

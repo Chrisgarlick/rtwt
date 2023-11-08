@@ -8,14 +8,14 @@ if ( is_home() || is_category() || is_tax() ) {
     if(is_tax() || is_category()){
         $context['page']['hero'][0]['title'] = single_term_title( '', false );
         $context['page']['hero'][0]['introduction'] = category_description();
-        $context['page']['hero'][0]['acf_fc_layout'] = 'primary_hero';
+        $context['page']['hero'][0]['acf_fc_layout'] = 'small_hero';
         $context['page']['hero'][0]['space_bottom'] = true;
     }
 } else {
     $context['page']['hero'] = get_field('flexible_hero');
     $context['page']['content'] = get_field('flexible_components');
     $context['page']['blogs_content'] = get_field('flexible_blogs');
-    $context['page']['cs_content'] = get_field('flexible_case_study');
+    $context['page']['test_content'] = get_field('flexible_testimonials');
     $context['page']['res_content'] = get_field('flexible_resources');
 
 }
@@ -82,39 +82,69 @@ if($context['page']['content']){
             $context['page']['content'][$i]['posts'] = new Timber\PostQuery($work_args);
         }
 
-
-        if($context['page']['content'][$i]['acf_fc_layout'] == 'related_case_studies_component') {
+        // Related Case Studies Component
+        if($context['page']['content'][$i]['acf_fc_layout'] == 'related_resources_component') {
             $related_ids = $context['page']['content'][$i]['related_ids'];            
             $category = $context['page']['content'][$i]['category']; 
-            $option = $context['page']['content'][$i]['select_news']; 
+            $option = $context['page']['content'][$i]['select_resource']; 
 
-            $case_studies_page = $context['global']['page_case_studies'];
-            if( $case_studies_page ){
-                $context['cs_all_news'] = get_permalink($case_studies_page);
-            } 
+            // $case_studies_page = $context['global']['page_case_studies'];
+            // if( $case_studies_page ){
+            //     $context['cs_all_news'] = get_permalink($case_studies_page);
+            // } 
 
             $related_news_args = [
-                'post_type' => 'case-study',
+                'post_type' => 'resources',
                 'posts_per_page' => 3,
                 'post_status' => 'publish', 
             ];
 
-            if($related_ids && $option == 'manual'){
+            if($option == 'manual'){
                 $category = false;
                 $related_news_args['orderby'] = 'post__in';
                 $related_news_args['posts_per_page'] = -1;
                 $related_news_args['post__in'] = $related_ids;
             }
 
-            if($category && $option == 'category'){
+            if($option == 'category'){
                 $related_news_args['tax_query'][] = [
-                    'taxonomy' => 'case-study-category',
+                    'taxonomy' => 'subject',
                     'field'    => 'term_id',
                     'terms'    => $category
                 ];
             }
 
             $context['page']['content'][$i]['posts'] = new Timber\PostQuery($related_news_args);
+        }
+
+        // Related Testimonials Component
+        if($context['page']['content'][$i]['acf_fc_layout'] == 'related_testimonials_component') {
+            $related_ids = $context['page']['content'][$i]['related_ids'];            
+            $category = $context['page']['content'][$i]['category']; 
+            $option = $context['page']['content'][$i]['select_testimonial']; 
+
+            $related_test_args = [
+                'post_type' => 'testimonials',
+                'posts_per_page' => 3,
+                'post_status' => 'publish', 
+            ];
+
+            if($related_ids && $option == 'manual'){
+                $category = false;
+                $related_test_args['orderby'] = 'post__in';
+                $related_test_args['posts_per_page'] = -1;
+                $related_test_args['post__in'] = $related_ids;
+            }
+
+            if($category && $option == 'category'){
+                $related_test_args['tax_query'][] = [
+                    'taxonomy' => 'type',
+                    'field'    => 'term_id',
+                    'terms'    => $category
+                ];
+            }
+            $context['page']['content'][$i]['posts'] = new Timber\PostQuery($related_test_args);
+
         }
 
         if($context['page']['content'][$i]['acf_fc_layout'] == 'faq_component') {

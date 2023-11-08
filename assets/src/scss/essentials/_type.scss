@@ -35,3 +35,18 @@ h4{
         @apply text-base;
     }
 }
+li {
+    list-style-type: none;
+    list-style: none;
+    @apply relative;
+    @apply ml-12;
+}
+li::before {
+    content: '';
+    background-image: url('../images/brain.svg');
+    @apply absolute;
+    left: -3rem;
+    width: 33px;
+    height: 27px;
+    @apply bg-cover;
+}

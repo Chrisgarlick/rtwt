@@ -1,9 +1,9 @@
 {
-    "key": "group_64cba97cca789",
-    "title": "Component - Related Resources",
+    "key": "group_6512e5f483bda",
+    "title": "Component - Related Testimonials",
     "fields": [
         {
-            "key": "field_64cba97d8a14d",
+            "key": "field_6512e5f494c1e",
             "label": "Content",
             "name": "",
             "aria-label": "",
@@ -20,7 +20,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_64cba9988a14e",
+            "key": "field_6512e5f494c2f",
             "label": "Title",
             "name": "title",
             "aria-label": "",
@@ -40,9 +40,9 @@
             "append": ""
         },
         {
-            "key": "field_64cba99f8a14f",
-            "label": "Select Resource",
-            "name": "select_resource",
+            "key": "field_6512e5f494c37",
+            "label": "Select Testimonial",
+            "name": "select_testimonial",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -66,8 +66,8 @@
             "placeholder": ""
         },
         {
-            "key": "field_64cba9ce8a150",
-            "label": "Related Resources",
+            "key": "field_6512e5f494c3f",
+            "label": "Related Testimonial",
             "name": "related_ids",
             "aria-label": "",
             "type": "relationship",
@@ -76,7 +76,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_64cba99f8a14f",
+                        "field": "field_6512e5f494c37",
                         "operator": "==",
                         "value": "manual"
                     }
@@ -98,7 +98,7 @@
             "elements": ""
         },
         {
-            "key": "field_64cba9f8f0358",
+            "key": "field_6512e5f494c46",
             "label": "Category",
             "name": "category",
             "aria-label": "",
@@ -108,7 +108,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_64cba99f8a14f",
+                        "field": "field_6512e5f494c37",
                         "operator": "==",
                         "value": "category"
                     }
@@ -119,7 +119,7 @@
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "subject",
+            "taxonomy": "type",
             "add_term": 1,
             "save_terms": 0,
             "load_terms": 0,
@@ -129,7 +129,7 @@
             "allow_null": 0
         },
         {
-            "key": "field_64cbaa3ef0359",
+            "key": "field_6512e5f494c4e",
             "label": "Settings",
             "name": "",
             "aria-label": "",
@@ -146,7 +146,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_64cbaa4df035a",
+            "key": "field_6512e5f494c55",
             "label": "Add Padding",
             "name": "add_padding",
             "aria-label": "",
@@ -166,7 +166,7 @@
             "ui": 1
         },
         {
-            "key": "field_64cbaa59f035b",
+            "key": "field_6512e5f494c5d",
             "label": "Top Padding",
             "name": "top_padding",
             "aria-label": "",
@@ -176,7 +176,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_64cbaa4df035a",
+                        "field": "field_6512e5f494c55",
                         "operator": "==",
                         "value": "1"
                     }
@@ -200,7 +200,7 @@
             "save_other_choice": 0
         },
         {
-            "key": "field_64cbaa7cf035c",
+            "key": "field_6512e5f494c77",
             "label": "Bottom Padding",
             "name": "bottom_padding",
             "aria-label": "",
@@ -210,7 +210,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_64cbaa4df035a",
+                        "field": "field_6512e5f494c55",
                         "operator": "==",
                         "value": "1"
                     }
@@ -252,5 +252,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695633859
+    "modified": 1695738334
 }

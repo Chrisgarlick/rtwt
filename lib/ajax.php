@@ -3,7 +3,7 @@
 add_action('wp_ajax_ajax_team_filter', 'ajax_team_filter');
 add_action('wp_ajax_nopriv_ajax_team_filter', 'ajax_team_filter');
 
-function ajax_resource_filter() {
+function ajax_team_filter() {
     $context = Timber::context();
     $post = new TimberPost();
     $context['post'] = $post;
@@ -15,7 +15,7 @@ function ajax_resource_filter() {
 	ob_start();
 
     $posts_args = [
-        'post_type' => 'resource',
+        'post_type' => 'testimonials',
         'posts_per_page' => $ppp,
         'post_status' => 'publish',
         'paged' => (int)$paged,
@@ -23,17 +23,16 @@ function ajax_resource_filter() {
 
     if($term_id){
         $posts_args['tax_query'][] = [
-            'taxonomy' => 'subject',
+            'taxonomy' => 'type',
             'field'    => 'term_id',
             'terms'    => $term_id
         ];
     }
 
     $posts = new Timber\PostQuery($posts_args);
-
     $context['posts'] = $posts; 
 
-    Timber::render( array( 'partials/resource-results.twig' ), $context );
+    Timber::render( array( 'partials/testimonials-results.twig' ), $context );
 
 	$html = ob_get_clean();
 
@@ -107,12 +106,13 @@ function ajax_cs_filter() {
     $ppp = get_option( 'posts_per_page' );
 
 	$term_id = $_POST['term_id'];
+    $term_id = (int)$term_id;
     $paged = isset($_POST['paged']) ? $_POST['paged'] : 1;
     
 	ob_start();
 
     $posts_args = [
-        'post_type' => 'case-study',
+        'post_type' => 'resources',
         'posts_per_page' => $ppp,
         'post_status' => 'publish',
         'paged' => (int)$paged,
@@ -120,17 +120,16 @@ function ajax_cs_filter() {
 
     if($term_id){
         $posts_args['tax_query'][] = [
-            'taxonomy' => 'case-study-category',
+            'taxonomy' => 'subject',
             'field'    => 'term_id',
             'terms'    => $term_id
         ];
     }
 
     $posts = new Timber\PostQuery($posts_args);
-
     $context['posts'] = $posts; 
 
-    Timber::render( array( 'partials/news-results.twig' ), $context );
+    Timber::render( array( '/partials/resource-results.twig' ), $context );
     
 	$html = ob_get_clean();
 

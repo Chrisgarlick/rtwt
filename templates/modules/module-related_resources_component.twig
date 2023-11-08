@@ -1,0 +1,38 @@
+{% if content.posts|length %}
+    <div class="m__posts {{ content.add_padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+        <div class="container mx-auto px-4">
+            {% if content.title|length %}
+                    <div class="w-full">
+                        <h2 class="m__news__title mb-8 text-center">{{ content.title }}</h2>
+                    </div>
+            {% endif %}
+            <div class="selected__news grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for post in content.posts %}
+                    <div class="m__card__wrap w-full">
+                        <article class="m__card shadow m__card--{{post.post_type}} relative rounded-xl w-full">
+                            {% block content %}
+                                <a href="{{post.link}}" class="w-full flex flex-col">
+                                    <div class="m__card__img rounded-t-xl bg-cover bg-no-repeat bg-center h-[232px] w-full" style="background-image:url('{{ post.thumbnail|towebp }}');">
+                                        <span class="sr-only">{{post.thumbnail.alt}}</span>
+                                    </div>
+                                    <div class="m__card__content rounded-b-xl bg-white p-8 flex-1">
+                                        <h2 class="mb-2">{{post.title}}</h2>
+                                        <div class="mt-2 mb-6 flex-1">
+                                            {{ post.resource_description }}
+                                        </div>
+                                        <div class="mt-auto"> 
+                                            <span class="cta--text cursor-pointer inline-block">{{ __('Read More', 'cg-theme') }}</span> 
+                                        </div>
+                                    </div>
+                                </a>
+                            {% endblock %}
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="w-full flex mt-8 justify-center">
+                <a href="{{ site.url }}/resources/" class="m__news__all cta--text">{{ __('View all Resources', 'cg-theme') }}</a>
+            </div>
+        </div>
+    </div>
+{% endif %}

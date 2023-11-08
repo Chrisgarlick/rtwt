@@ -9,7 +9,7 @@ $custom_ptypes = [
     [
         'singular' => 'Resource',
         'plural' => 'Resources',
-        'icon' => 'dashicons-groups',
+        'icon' => 'dashicons-analytics',
         'name' => 'resources',
         'archive' => false,
         'supports' => ['title', 'thumbnail'],
@@ -18,15 +18,15 @@ $custom_ptypes = [
         'slug' => 'resource'
     ], 
     [
-        'singular' => 'Case Study',
-        'plural' => 'Case Studies',
-        'icon' => 'dashicons-analytics',
-        'name' => 'case-study',
+        'singular' => 'Testimonial',
+        'plural' => 'Testimonials',
+        'icon' => 'dashicons-groups',
+        'name' => 'testimonials',
         'archive' => false,
         'supports' => ['title', 'thumbnail', 'excerpt'],
         'tags' => false,
         'acf_id' => false,
-        'slug' => 'case-study'
+        'slug' => 'testimonial'
     ], 
     [
         'singular' => 'FAQ',
@@ -126,11 +126,11 @@ function create_taxonomies() {
         ]
     );
 
-    register_taxonomy('case-study-category', ['case-study'],
+    register_taxonomy('type', ['testimonials'],
         [
             'labels' => [
-                'name' => __('Categories', 'cg-theme'),
-                'singular_name' => __('Category', 'cg-theme')
+                'name' => __('Type', 'cg-theme'),
+                'singular_name' => __('Type', 'cg-theme')
             ],
             'hierarchical' => true,
             'query_var' => true,

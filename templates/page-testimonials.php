@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Case Studies
+ * Template Name: Testimonials
  */
 
 $context = Timber::get_context();
@@ -10,20 +10,20 @@ $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $ppp = get_option( 'posts_per_page' );
 
 $context['terms'] = get_terms( array(
-    'taxonomy' => 'case-study-category',
+    'taxonomy' => 'type',
     'hide_empty' => true,
     'orderby' => 'name',
     'order'   => 'ASC',
     'exclude' => array( 1 ),
 ) );
 
-$case_studies_page = $context['global']['page_case_studies'];
-if( $case_studies_page ){
-	$context['cs_all_news'] = get_permalink($case_studies_page);
+$testimonial_page = $context['global']['page_testimonials'];
+if( $testimonial_page ){
+	$context['cs_all_news'] = get_permalink($testimonial_page);
 } 
 
-$case_studies_args = [
-    'post_type' => 'case-study',
+$testimonials = [
+    'post_type' => 'testimonials',
     'posts_per_page' => $ppp,
     'post_status' => 'publish',
     'paged' => $paged,
@@ -32,11 +32,11 @@ $case_studies_args = [
 ];
 
 if($paged != '1'){
-    $context['paged'] = ' - '. __('Page ', 'cd-theme') . $paged;
+    $context['paged'] = ' - '. __('Page ', 'cg-theme') . $paged;
 }
 
-$context['posts']= new Timber\PostQuery($case_studies_args);
+$context['posts'] = new Timber\PostQuery($testimonials);
 
 require_once('components.php');
 
-Timber::render( array( 'pages/page-case-studies.twig', 'page.twig' ), $context );
+Timber::render( array( 'pages/page-testimonials.twig', 'page.twig' ), $context );

@@ -55,3 +55,128 @@
     }
 
 }
+.m__related_testimonials {
+
+    .slick-dots {
+
+        @apply flex;
+        @apply justify-center;
+        @apply items-center;
+
+        li {
+
+            @apply mx-8;
+            border: 2px solid black;
+            border-radius: 50%;
+            @apply h-[30px];
+            @apply w-[30px];
+
+            &:hover {
+
+                @apply bg-primary;
+
+                button {
+
+                    @apply opacity-50;
+
+                }
+
+            }
+
+            button {
+
+
+            }
+
+            &.slick-active {
+
+                @apply bg-primary;
+
+
+                button {
+
+
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &__buttons {
+
+        button {
+
+            background-image: url('../images/rtwt_arrow.svg');
+            background-size: cover; /* Adjust as needed */
+            width: 30px; /* Adjust width as needed */
+            height: 30px; /* Adjust height as needed */
+            padding: 10px; /* Adjust padding as needed */
+            cursor: pointer; /* Add a pointer cursor on hover */
+
+            &.next-btn {
+
+                transform: rotate(180deg);
+
+            }
+
+        }
+
+    }
+
+    &__wrapper {
+
+        @apply relative;
+
+        .m__related_testiominals__wrapper--transformation{
+            
+            &::before, &::after {
+
+                content: '';
+                background-image: url('http://localhost/rtwt/wp-content/uploads/2023/07/unnamed-file.png');
+                height: 52px;
+                width: 65px;
+                @apply block;
+                @apply bg-no-repeat;
+                @apply bg-cover; 
+                @apply bg-center;
+                @apply absolute;
+
+            }
+
+            &::before {
+
+                top: -2rem;
+                left: 7.5rem;
+                @media only screen and (max-width: 1304px) {
+                    left: 5rem;
+                }
+                @media only screen and (max-width: 1023px) {
+                    left: 3rem;
+                    top: -1rem;
+                }
+
+            }
+
+            &::after {
+
+                top: -2rem;
+                right: 7.5rem;
+                transform: rotate(180deg);
+                @media only screen and (max-width: 1304px) {
+                    right: 5rem;
+                }
+                @media only screen and (max-width: 1023px) {
+                    right: 3rem;
+                    top: -1rem;
+                }
+
+            }
+
+        }
+
+    }
+
+}

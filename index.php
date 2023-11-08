@@ -21,6 +21,8 @@ $context['terms'] = get_terms( array(
     'exclude' => array( 1 ),
 ) );
 
+// var_dump($context['terms']);
+
 require_once('templates/components.php');
 
 Timber::render( array( 'index.twig') , $context );

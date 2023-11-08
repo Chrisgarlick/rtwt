@@ -4,9 +4,27 @@
 
         &__headers {
 
+            @media only screen and (max-width: 767px) {
+
+                flex-wrap: wrap;
+                @apply mb-4;
+
+            }
+
             &--title {
 
+                @media only screen and (max-width: 767px) {
+
+                    @apply w-1/2;
+
+                }
+
                 h3 {
+
+                    @apply text-center;
+                    @apply lg:text-left;
+                    @apply mx-4;
+                    @apply lg:mx-0;
 
                     &.active {
 

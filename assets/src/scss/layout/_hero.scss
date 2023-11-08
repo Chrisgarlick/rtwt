@@ -11,7 +11,8 @@
 
         h1 {
 
-            @apply text-3xl;
+            @apply text-2xl;
+            @apply lg:text-3xl;
             @apply uppercase;
 
         }
@@ -22,8 +23,11 @@
 
         p {
 
-            @apply text-xxl;
-            @apply w-3/4;
+            @apply text-lg;
+            @apply md:text-xl;
+            @apply lg:text-xxl;
+            @apply w-full;
+            @apply lg:w-3/4;
             @apply mx-auto;
 
         }
@@ -38,6 +42,32 @@
 .h__secondary_hero {
 
     height: 75vh;
+
+    @media only screen and (max-width: 767px) {
+
+        height: 550px;
+
+    }
+
+    &__wrap {
+
+        &--right {
+
+            img {
+
+                @apply rounded-xl;
+
+                @media only screen and (max-width: 767px) {
+
+                    max-width: 300px;
+
+                }
+
+            }
+
+        }
+
+    }
 
 }
 

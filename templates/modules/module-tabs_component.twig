@@ -4,9 +4,9 @@
             <h2>{{ content.section_title }}<h2>
         </div>
         <div class="m__tabs__wrapper flex {% if content.alignment == 'vertical' %} flex-col md:flex-row {% if content.side == 'right' %} flex-row-reverse {% endif %} {% else %} flex-col {% endif %} w-full my-4">
-            <div class="m__tabs__wrapper__headers flex {% if content.alignment == 'vertical' %} flex-row md:flex-col w-full md:w-1/2  {% else %} flex-row w-full my-8 {% endif %} justify-evenly items-center">
+            <div class="m__tabs__wrapper__headers flex {% if content.alignment == 'vertical' %} flex-row md:flex-col w-full md:w-1/2  {% else %} flex-row w-full my-8 {% endif %} justify-start pl-0 lg:pl-16 items-start">
                 {% for section in content.tab_content %}
-                    <div class="m__tabs__wrapper__headers--title">
+                    <div class="m__tabs__wrapper__headers--title my-4">
                         <h3{% if loop.index == 1 %} class="active"{% endif %}>{{ section.title }}</h3>
                     </div>
                 {% endfor %}

@@ -2,7 +2,7 @@
 
     &__wrap {
 
-        @apply gap-2;
+        @apply gap-10;
         @apply md:gap-4;
         @apply lg:gap-32;
 
@@ -42,10 +42,20 @@
                 
                 text-align: center;
 
+
                 &--image {
 
                     @apply p-8;
                     @apply md:p-8;
+                    max-width: 300px;
+                    max-height: 300px;
+                    margin: auto;
+                    
+                    img {
+                        
+                        border-radius: 12px;
+
+                    }
 
                 }
 
@@ -72,6 +82,7 @@
 
                 @apply w-3/4;
                 @apply mx-auto;
+                @apply items-end;
 
                 &--header {
 
@@ -83,7 +94,7 @@
 
                     @apply flex;
                     @apply justify-center;
-                    @apply items-center;
+                    @apply items-start;
                     @apply flex-col;
 
                     a {
@@ -115,6 +126,9 @@
             &__image {
                 
                 text-align: center;
+                max-width: 300px;
+                max-height: 300px;
+                margin: auto;
 
                 &--image {
 
@@ -145,6 +159,7 @@
 
                 @apply w-3/4;
                 @apply mx-auto;
+                @apply items-start;
 
                 &--header {
 
@@ -156,12 +171,17 @@
 
                     @apply flex;
                     @apply justify-center;
-                    @apply items-center;
+                    @apply items-start;
                     @apply flex-col;
+                    @apply w-full;
 
                     a {
 
                         @apply my-4;
+                        border-bottom: 3px solid black;
+                        border-radius: 0;
+                        @apply w-full;
+                        @apply text-left;
 
                     }
 

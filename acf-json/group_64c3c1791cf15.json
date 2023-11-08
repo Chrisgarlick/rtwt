@@ -138,7 +138,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "case-study"
+                "value": "post"
             }
         ],
         [
@@ -146,6 +146,13 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "faq"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonials"
             }
         ]
     ],
@@ -158,5 +165,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1691148607
+    "modified": 1695131803
 }

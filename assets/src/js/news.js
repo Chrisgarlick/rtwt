@@ -1,5 +1,7 @@
 import ajax_url from "./ajax.js";
 
+console.log(ajax_url);
+
 $(document).on('load', function() {
     console.log('loaded from news page');
 });
@@ -34,6 +36,9 @@ function newsFilter(term_id){
         }
 
     }); 
+
+    console.log(ajaxPromise)
+
 
     $.when(animPromise, ajaxPromise).done(function () {
         $('.m__posts .grid').html(result);
@@ -79,10 +84,14 @@ function csFilter(term_id){
             result = data.html;  
             total = data.total;
         }
+        
 
     }); 
 
+    animPromise = $.when();
+
     $.when(animPromise, ajaxPromise).done(function () {
+        
         $('.m__posts .grid').html(result);
 
         $('.m__posts .grid').attr('data-total', total);
@@ -92,7 +101,56 @@ function csFilter(term_id){
         reviewLoadmoreNews();
 
     }); 
-    
+
+}  
+
+function testimonialFilter(term_id){
+
+    $('.m__posts .grid').empty();
+
+    $('#loading').addClass('active');
+
+    $('#load-more').addClass('hide');
+
+    $('#load-more').attr('data-term', term_id);
+
+    $('#load-more').attr('data-page', 1);
+
+    var ajaxPromise, animPromise, result, total; 
+
+    ajaxPromise = $.ajax({
+        type: 'POST',
+        url: ajax_url,
+        dataType: 'json', 
+
+        data: ({
+            'action': 'ajax_team_filter',
+            'term_id': term_id,
+        }),
+
+        success: function (data) {
+            result = data.html;  
+            total = data.total;
+        }
+        
+
+    }); 
+
+    console.log(ajaxPromise);
+
+    animPromise = $.when();
+
+    $.when(animPromise, ajaxPromise).done(function () {
+        
+        $('.m__posts .grid').html(result);
+
+        $('.m__posts .grid').attr('data-total', total);
+
+        $('#loading').removeClass('active');
+
+        reviewLoadmoreNews();
+
+    }); 
 
 }  
 
@@ -134,7 +192,21 @@ $(document).on("change", 'body.blog select[name="team-filter"]', function(e) {
 });
 
 
-$(document).on("click", 'body.page-template-page-case-studies .c__filter__links span[data-id]', function(e) { 
+$(document).on("click", 'body.page-template-page-testimonials .c__filter__links span[data-id]', function(e) { 
+    e.preventDefault(); 
+
+    $('.c__filter__links span').removeClass('active');
+
+    $(this).addClass('active');
+
+    var term_id = $(this).attr('data-id');
+
+    testimonialFilter(term_id);
+
+});
+
+
+$(document).on("click", 'body.page-template-page-resources .c__filter__links span[data-id]', function(e) { 
     e.preventDefault(); 
 
     $('.c__filter__links span').removeClass('active');
@@ -149,12 +221,12 @@ $(document).on("click", 'body.page-template-page-case-studies .c__filter__links 
 
 // SORT FILTER FOR RESOURCES
 
-$(document).on("change", 'body.page-template-page-case-studies select[name="team-filter"]', function(e) { 
+$(document).on("change", 'body.page-template-page-testimonials select[name="team-filter"]', function(e) { 
     e.preventDefault(); 
 
     var term_id = $(this).val();
 
-    csFilter(term_id);
+    testimonialFilter(term_id);
 
 });
 

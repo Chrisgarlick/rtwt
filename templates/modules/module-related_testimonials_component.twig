@@ -1,0 +1,32 @@
+{% if content.posts|length %}
+    <div class="m__related_testimonials {{ content.add_padding ? content.top_padding ~ ' ' ~  content.bottom_padding }}">
+        <div class="container mx-auto px-4">
+            <div class="m__related_testimonials--title text-center mb-4">
+                <h4>{{ content.title }}</h4>
+            </div>
+            <div class="m__related_testimonials__wrapper {{ content.posts|length }} {% if content.posts|length > 1 %}add_slider{% endif %}">
+                {% for post in content.posts %}
+                    {% if post.flexible_testimonials_0_type == 'testimonial' %}
+                        <div class="m__related_testiominals__wrapper--{{ post.flexible_testimonials_0_type }}">
+                            {{ post.flexible_testimonials_0_video_embed }}
+                        </div>
+                    {% else %}
+                        <div class="m__related_testiominals__wrapper--{{ post.flexible_testimonials_0_type }} text-center w-2/3 mx-auto">
+                            <p>{{ post.flexible_testimonials_0_quote }}</p>
+                            <h4>{{ post.flexible_testimonials_0_name }}</h4>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% if content.posts|length > 1 %}
+                <div class="m__related_testimonials__buttons flex justify-between items-center">
+                    <button class="prev-btn"></button>
+                    <button class="next-btn"></button>
+                </div>
+            {% endif %}
+            <div class="m__related_testimonials--link text-center mt-8">
+                <a class="cta cta--primary" href="{{ site.url }}/testimonial/">Read More</a>
+            </div>
+        </div>
+    </div>
+{% endif %}

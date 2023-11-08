@@ -13,18 +13,19 @@
     }
 
     &--primary{
-        @apply bg-white;
-        @apply border-black;
-        @apply text-black;
+        @apply bg-primary;
+        @apply border-primary;
+        @apply text-white;
         @apply border-2;
         @apply font-bold;
+        @apply uppercase;
 
 
         &:hover{
           
-            @apply bg-black;
-            @apply border-black;
-            @apply text-white;
+            @apply bg-white;
+            @apply border-primary;
+            @apply text-primary;
 
         }
 
@@ -37,17 +38,18 @@
     }
 
     &--secondary{
-        @apply text-white;
+        @apply text-primary;
         @apply border-2;
-        @apply border-black;
-        @apply bg-black;
+        @apply border-white;
+        @apply bg-white;
         @apply font-bold;
+        @apply uppercase;
 
 
         &:hover{
-            @apply bg-white;
-            @apply text-black; 
-            @apply border-black;
+            @apply bg-primary;
+            @apply text-white; 
+            @apply border-primary;
         }
 
         &:focus, &:active{
@@ -88,8 +90,11 @@
         @apply font-medium;
         @apply text-black;
         @apply no-underline;
-        @apply decoration-red;
+        @apply decoration-primary;
         @apply decoration-2;
+        @apply px-0;
+        @apply mx-0;
+        @apply text-base;
 
         &:hover, &:focus, &:active {
             @apply underline;

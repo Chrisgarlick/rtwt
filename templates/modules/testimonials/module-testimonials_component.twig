@@ -1,0 +1,24 @@
+<div class="t__testimonial">
+    <div class="container mx-auto px-4">
+        <div class="t__testimonial__wrapper {{ content.type }}">
+            {% if content.type == 'testimonial' %}
+                {{ content.video_embed }}
+            {% else %}
+                <div class="t__testimonial__wrapper--title">
+                    <h4>{{ content.name }}</h4>
+                    <h2>{{ content.weight  }}</h2>
+                </div>
+                <div class="t__testimonial__wrapper--description">
+                    {{ content.description }}
+                </div>
+                <div class="t__testimonial__wrapper--quote">
+                    <p>{{ content.quote }}</p>
+                    <p>{{ content.name }}</p>
+                </div>
+                <div class="t__testimonial__wrapper--image">
+                    <img src="{{ content.image.url }}">
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

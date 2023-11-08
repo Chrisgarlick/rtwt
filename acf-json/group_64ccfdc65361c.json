@@ -3,6 +3,23 @@
     "title": "Component - Resources",
     "fields": [
         {
+            "key": "field_650d6946094e7",
+            "label": "Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_64ccfdc6e7686",
             "label": "Resource Name",
             "name": "resource_name",
@@ -23,11 +40,11 @@
             "append": ""
         },
         {
-            "key": "field_64ccfde2e7687",
-            "label": "Resource URL",
-            "name": "resource_url",
+            "key": "field_6511538042115",
+            "label": "Resource CTA",
+            "name": "resource_cta",
             "aria-label": "",
-            "type": "text",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -36,11 +53,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "return_format": ""
         },
         {
             "key": "field_64ccfdeae7688",
@@ -86,6 +99,48 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
+        },
+        {
+            "key": "field_650d694e094e8",
+            "label": "Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_650d6956094e9",
+            "label": "Resource Type",
+            "name": "resource_type",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "external": "External",
+                "internal": "Internal"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
         }
     ],
     "location": [
@@ -106,5 +161,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1691156498
+    "modified": 1695634324
 }

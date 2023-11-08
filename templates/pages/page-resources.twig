@@ -10,7 +10,7 @@
 			<div class="container mx-auto px-4">
 				<div class="c__filter__links hidden md:block">
 					<span class="mr-4 font-bold">Filter by</span>
-					<a href="#" class="cta cta--primary">{{ __('All Subjects', 'cd-theme') }}</a>
+					<a href="{{ site.url }}/resources/" class="cta cta--primary">{{ __('All Resources', 'cd-theme') }}</a>
 					{% for term in terms %} 
 						<span class="{{ term.term_id == active_filter ? 'active' }} cta cta--primary" data-id="{{ term.term_id }}">{{ term.name }}</span>
 					{% endfor %}
@@ -29,7 +29,7 @@
 		</div>
 	{% endif %}
  
-    <div class="m__team py-8 md:pt-20 md:pb-24">
+    <div class="m__posts py-8 md:pt-20 md:pb-24">
         <div class="container mx-auto px-4">
 			{% if posts|length > 0 %}
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">

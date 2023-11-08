@@ -8,11 +8,11 @@
 						{% if item.child %}
 							<div class="m__nav__item-sub">
 								<a href="{{ item.url }}" class="m__nav__item-link font-medium" target="{{ item.target == '_blank' ? item.target : '_self' }}">{{ item.name }}</a>
-								<label for="menu-checkbox-{{ item.object_id }}" class="menu-checkbox-toggle">{{__('Next', 'cd-theme') }}</label>
+								<label for="menu-checkbox-{{ item.object_id }}" class="menu-checkbox-toggle">{{__('Next', 'cg_base') }}</label>
 							</div>
-							<input type="checkbox" id="menu-checkbox-{{ item.object_id }}" name="menu-checkbox-{{ item.object_id }}" class="menu-checkbox">
-							<div class="subnav">
-								<label for="menu-checkbox-{{ item.object_id }}" class="subnav__back">{{ __('Back', 'cd-theme') }}</label>
+							<input type="checkbox" id="menu-checkbox-{{ item.object_id }}" name="menu-checkbox-{{ item.object_id }}" class="menu-checkbox hidden">
+							<div class="subnav hidden">
+								<label for="menu-checkbox-{{ item.object_id }}" class="block md:hidden subnav__back">{{ __('Back', 'cg_base') }}</label>
 
 								<div class="l__contain l__flexheight">
 									{% if item.attr_title|length  %}
@@ -29,11 +29,11 @@
 													{% if subitem.child %}
 														<div class="m__nav__item--sub">
 															<a class="font-medium" href="{{ subitem.url }}" title="{{ subitem.name }}">{{ subitem.name }}</a>
-															<label for="menu-checkbox-{{ subitem.object_id }}" class="menu-checkbox-toggle">{{__('Next', 'cd-theme') }}</label>
+															<label for="menu-checkbox-{{ subitem.object_id }}" class="menu-checkbox-toggle">{{__('Next', 'cg_base') }}</label>
 														</div>
 														<input type="checkbox" id="menu-checkbox-{{ subitem.object_id }}" name="menu-checkbox-{{ subitem.object_id }}" class="menu-checkbox">
 														<ul class="subnav__children nolist">
-															<label for="menu-checkbox-{{ subitem.object_id }}" class="subnav__back">{{ __('Back', 'cd-theme') }}</label>
+															<label for="menu-checkbox-{{ subitem.object_id }}" class="subnav__back">{{ __('Back', 'cg_base') }}</label>
 															{% for childitem in nav %} 
 																{% if childitem.menu_item_parent == subitem.id %}
 																	<li><a class="font-medium" href="{{ childitem.url }}" title="{{ childitem.name }}">{{ childitem.name }}</a></li>

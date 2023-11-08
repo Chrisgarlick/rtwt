@@ -1,7 +1,7 @@
 <div class="r__resources my-24">
     <div class="container mx-auto px-4">
-        <div class="r__resources__wrap w-full flex flex-row gap-8">
-            <div class="r__resources__wrap__left flex flex-col w-1/2">
+        <div class="r__resources__wrap--{{ content.resource_type }} w-full grid grid-cols-2 gap-16">
+            <div class="r__resources__wrap__left flex flex-col w-full">
                 <div class="r__resources__wrap__left--title">
                     <h2>{{ content.resource_name }}</h2>
                 </div>
@@ -9,12 +9,12 @@
                     {{ content.resource_description|wpautop }}
                 </div>
             </div>
-            <div class="r__resources__wrap__right flex flex-col w-1/2">
+            <div class="r__resources__wrap__right flex flex-col w-full">
                 <div class="r__resources__wrap__right--image w-5/6 h-auto">
                     <img src="{{ content.resource_image.url }}">
                 </div>
                 <div id="cta" class="r__resources__wrap__right--links mt-4">
-                    <a href="{{ content.resource_url }}" target="__blank" class="cta cta--primary">Download</a>
+                    <a href="{{ content.resource_cta.url }}" target="__blank" class="cta cta--primary">{{ content.resource_cta.title }}</a>
                 </div>
             </div>
         </div>

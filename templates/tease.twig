@@ -8,7 +8,20 @@
 				<div class="m__card__content rounded-b-xl bg-white p-8 flex-1">
 					<h2 class="mb-2">{{post.title}}</h2>
 					<div class="mt-2 mb-6 flex-1">
-						{{ post.preview.length(20).end('').read_more(false)|wpautop }}
+						{% if post.post_type == 'resources' %}
+							<p>
+								{% set description = post.flexible_resources_0_resource_description | slice(0, 60) %}
+								{{ description ~ (post.flexible_resources_0_resource_description|length > 60 ? '...' : '') }}
+							</p>
+						{% elseif post.post_type == 'testimonials' %}
+							<p>
+								{% set description = post.flexible_testimonials_0_description | slice(0, 60) %}
+								{{ description ~ (post.flexible_testimonials_0_description|length > 60 ? '...' : '') }}
+							</p>
+							<p>{{ post.flexible_testimonials_0_type|capitalize }}</p>
+						{% else %}
+							{{ post.preview.length(20).end('').read_more(false)|wpautop }}
+						{% endif %}
 					</div>
 					<div class="mt-auto"> 
 						<span class="cta--text cursor-pointer inline-block">{{ __('Read More', 'cd-theme') }}</span> 
